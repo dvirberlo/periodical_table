@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C4BF635-E184-4EE9-81B4-3657BA614C06}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PeriodicalTable</RootNamespace>
+    <AssemblyName>PeriodicalTable</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetCategories.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCategories.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetCities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCities.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetElements.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetElements.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetGroups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGroups.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetProperties.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProperties.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPropertiesInElement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPropertiesInElement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetStudents.cs">
+      <DependentUpon>DataSetStudents.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetStudents.Designer.cs">
+      <DependentUpon>DataSetStudents.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSetUsers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUsers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCategories.designer.cs">
+      <DependentUpon>FormAddCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddPropertiesInElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddPropertiesInElement.designer.cs">
+      <DependentUpon>FormAddPropertiesInElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddProperties.designer.cs">
+      <DependentUpon>FormAddProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddGroups.designer.cs">
+      <DependentUpon>FormAddGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddCities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCities.designer.cs">
+      <DependentUpon>FormAddCities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddElements.designer.cs">
+      <DependentUpon>FormAddElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddUser.designer.cs">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPeriodicalTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPeriodicalTable.Designer.cs">
+      <DependentUpon>FormPeriodicalTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTblCities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTblCities.Designer.cs">
+      <DependentUpon>FormTblCities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTblElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTblElements.Designer.cs">
+      <DependentUpon>FormTblElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTblCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTblCategories.Designer.cs">
+      <DependentUpon>FormTblCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTblGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTblGroups.Designer.cs">
+      <DependentUpon>FormTblGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTblProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTblProperties.Designer.cs">
+      <DependentUpon>FormTblProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTblPropertiesInElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTblPropertiesInElement.Designer.cs">
+      <DependentUpon>FormTblPropertiesInElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTblUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTblUsers.Designer.cs">
+      <DependentUpon>FormTblUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateElements.designer.cs">
+      <DependentUpon>FormUpdateElements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateGroups.designer.cs">
+      <DependentUpon>FormUpdateGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateProperties.designer.cs">
+      <DependentUpon>FormUpdateProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdateUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateUsers.designer.cs">
+      <DependentUpon>FormUpdateUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAddCategories.resx">
+      <DependentUpon>FormAddCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddPropertiesInElement.resx">
+      <DependentUpon>FormAddPropertiesInElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddProperties.resx">
+      <DependentUpon>FormAddProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddGroups.resx">
+      <DependentUpon>FormAddGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddCities.resx">
+      <DependentUpon>FormAddCities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddElements.resx">
+      <DependentUpon>FormAddElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddUser.resx">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPeriodicalTable.resx">
+      <DependentUpon>FormPeriodicalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTblCities.resx">
+      <DependentUpon>FormTblCities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTblElements.resx">
+      <DependentUpon>FormTblElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTblCategories.resx">
+      <DependentUpon>FormTblCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTblGroups.resx">
+      <DependentUpon>FormTblGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTblProperties.resx">
+      <DependentUpon>FormTblProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTblPropertiesInElement.resx">
+      <DependentUpon>FormTblPropertiesInElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTblUsers.resx">
+      <DependentUpon>FormTblUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateElements.resx">
+      <DependentUpon>FormUpdateElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateGroups.resx">
+      <DependentUpon>FormUpdateGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateProperties.resx">
+      <DependentUpon>FormUpdateProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateUsers.resx">
+      <DependentUpon>FormUpdateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DataSetCategories.xsc">
+      <DependentUpon>DataSetCategories.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCategories.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCategories.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCategories.xss">
+      <DependentUpon>DataSetCategories.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCities.xsc">
+      <DependentUpon>DataSetCities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCities.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCities.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCities.xss">
+      <DependentUpon>DataSetCities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetElements.xsc">
+      <DependentUpon>DataSetElements.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetElements.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetElements.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetElements.xss">
+      <DependentUpon>DataSetElements.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGroups.xsc">
+      <DependentUpon>DataSetGroups.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGroups.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGroups.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetGroups.xss">
+      <DependentUpon>DataSetGroups.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProperties.xsc">
+      <DependentUpon>DataSetProperties.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProperties.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProperties.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetProperties.xss">
+      <DependentUpon>DataSetProperties.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPropertiesInElement.xsc">
+      <DependentUpon>DataSetPropertiesInElement.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPropertiesInElement.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPropertiesInElement.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPropertiesInElement.xss">
+      <DependentUpon>DataSetPropertiesInElement.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetStudents.xsc">
+      <DependentUpon>DataSetStudents.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetStudents.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetStudents.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetStudents.xss">
+      <DependentUpon>DataSetStudents.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUsers.xsc">
+      <DependentUpon>DataSetUsers.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUsers.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUsers.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetUsers.xss">
+      <DependentUpon>DataSetUsers.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
