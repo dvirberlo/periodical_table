@@ -143,6 +143,12 @@ namespace PeriodicalTable
             ShowFormAndHide(new FormPeriodicalTable(dataConnection));
         }
 
+        // reports
+        private void RptElementsByAtomicNum(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormRptElementsByAtomicNum(dataConnection));
+        }
+
 
 
     }

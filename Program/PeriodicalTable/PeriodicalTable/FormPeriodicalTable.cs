@@ -114,12 +114,15 @@ namespace PeriodicalTable
             int marginX = (width / cols) / 5, marginY = (height / rows) / 5;
             int btnSizeX = marginX * 4, btnSizeY = marginY * 4;
 
+            // rows and cols
             int lblIndex = 0;
             for (int row = 1; row <= rows; row++, lblIndex++)
             {
                 int x = startX + ((0) * (btnSizeX + marginX)) - 20;
                 int y = startY + ((row - 1) * (btnSizeY + marginY));
-                lblArr[lblIndex] = CreateLabel(x, y, btnSizeX, btnSizeY, row.ToString(), ContentAlignment.MiddleLeft);
+                String rowS = row.ToString();
+                if (row >= 9) rowS = (row - 3).ToString();
+                lblArr[lblIndex] = CreateLabel(x, y, btnSizeX, btnSizeY, rowS, ContentAlignment.MiddleLeft);
             }
             for (int col = 1; col <= cols; col++, lblIndex++)
             {
@@ -127,6 +130,7 @@ namespace PeriodicalTable
                 int y = startY + ((0) * (btnSizeY + marginY)) - 20;
                 lblArr[lblIndex] = CreateLabel(x, y, btnSizeX, btnSizeY, col.ToString(), ContentAlignment.TopCenter);
             }
+            // elements
             foreach (KeyValuePair<int, object[]> elem in elements)
             {
                 object[] elemObj = elem.Value;
