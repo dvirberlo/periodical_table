@@ -43,12 +43,13 @@ namespace PeriodicalTable
                 groups = new Dictionary<string, Color>();
                 OleDbCommand groupCommand = new OleDbCommand();
                 groupCommand.Connection = dataConnection;
-                groupCommand.CommandText = "SELECT groupName, groupColor FROM tblGroups";
+                String groupSelects = "groupName,groupColor";
+                groupCommand.CommandText = "SELECT " + groupSelects + " FROM tblGroups";
                 OleDbDataReader groupReader = groupCommand.ExecuteReader();
                 int groupCounter = 0;
                 while (groupReader.Read())
                 {
-                    object[] groupObj = new object[2];
+                    object[] groupObj = new object[groupSelects.Split(',').Length];
                     int len = groupReader.GetValues(groupObj);
                     String name = groupReader.GetString(0);
                     String colorS = groupReader.GetString(1);
@@ -63,13 +64,14 @@ namespace PeriodicalTable
                 elements = new Dictionary<int, object[]>();
                 OleDbCommand elemCommand = new OleDbCommand();
                 elemCommand.Connection = dataConnection;
-                elemCommand.CommandText = "SELECT elemID, elemRow, elemColumn, elemSymbol, elemGroup, elemFullName, elemEnName, elemHeName, elemAtomicWeight, elemEnergyLevels, elemSymbol FROM tblElements";
+                String elemSelects = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
+                elemCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements";
                 OleDbDataReader elemReader = elemCommand.ExecuteReader();
                 int elemCounter = 0;
                 int maxRow = -1, maxCol = -1;
                 while (elemReader.Read())
                 {
-                    object[] elemObj = new object[11];
+                    object[] elemObj = new object[elemSelects.Split(',').Length];
                     int len = elemReader.GetValues(elemObj);
                     int id = Convert.ToInt32(elemObj[0]);
                     elements.Add(id, elemObj);
@@ -137,20 +139,19 @@ namespace PeriodicalTable
                 int id = Convert.ToInt32(elemObj[0]);
                 int row = Convert.ToInt32(elemObj[1]);
                 int col = Convert.ToInt32(elemObj[2]);
-                String text = elemObj[3].ToString();
+                String symbol = elemObj[3].ToString();
                 String group = elemObj[4].ToString();
                 String fullName = elemObj[5].ToString();
                 String enName = elemObj[6].ToString();
                 String heName = elemObj[7].ToString();
                 int atomicWeight = Convert.ToInt32(elemObj[8]);
                 String energyLevels = elemObj[9].ToString();
-                String symbol = elemObj[10].ToString();
 
                 Color color = groups[group];
                 int x = startX + ((col - 1) * (btnSizeX + marginX));
                 int y = startY + ((row - 1) * (btnSizeY + marginY));
                 String name = "btn_" + row.ToString() + "_" + col.ToString();
-                btnTable[id - 1] = CreateElemButton(x, y, btnSizeX, btnSizeY, name, text, color, id, fullName, enName, heName, group, atomicWeight, energyLevels, symbol);
+                btnTable[id - 1] = CreateElemButton(x, y, btnSizeX, btnSizeY, name, symbol, color, id, fullName, enName, heName, group, atomicWeight, energyLevels, symbol);
             }
             // group-color dict
             int groupRows = 2;

@@ -26,10 +26,7 @@ namespace PeriodicalTable
             FillFromDB(this.fromAtomic, "");
 
             listView.Columns.Clear();
-            listView.View = View.Details;
-            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            //string s = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
+            //string strCols = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
             string strCols = "מספר זהות,שורה,טור,סימן,קבוצה,שם מלא,שם אנגלי,שם עברי,משקל אטומי,רמות אנרגיה";
             string[] cols = strCols.Split(',');
             foreach (string col in cols)
@@ -60,13 +57,14 @@ namespace PeriodicalTable
             cb.Items.Clear();
             OleDbCommand cbCommand = new OleDbCommand();
             cbCommand.Connection = dataConnection;
-            cbCommand.CommandText = "SELECT elemID, elemRow, elemColumn, elemSymbol, elemGroup, elemFullName, elemEnName, elemHeName, elemAtomicWeight, elemEnergyLevels FROM tblElements \n" + cmd + "\n ORDER BY elemAtomicWeight";
+            String elemSelects = "elemAtomicWeight";
+            cbCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemAtomicWeight";
             OleDbDataReader cbReader = cbCommand.ExecuteReader();
             while (cbReader.Read())
             {
-                object[] elemObj = new object[10];
+                object[] elemObj = new object[elemSelects.Split(',').Length];
                 int len = cbReader.GetValues(elemObj);
-                double atomicWeight = Convert.ToDouble(elemObj[8]);
+                double atomicWeight = Convert.ToDouble(elemObj[0]);
                 cb.Items.Add(atomicWeight);
             }
             cbReader.Close();
@@ -74,18 +72,19 @@ namespace PeriodicalTable
         private void FillFromDB(ListView lv, String cmd)
         {
             lv.Items.Clear();
-            OleDbCommand cbCommand = new OleDbCommand();
-            cbCommand.Connection = dataConnection;
-            cbCommand.CommandText = "SELECT elemID, elemRow, elemColumn, elemSymbol, elemGroup, elemFullName, elemEnName, elemHeName, elemAtomicWeight, elemEnergyLevels FROM tblElements \n " + cmd + "\n ORDER BY elemAtomicWeight";
-            OleDbDataReader cbReader = cbCommand.ExecuteReader();
-            while (cbReader.Read())
+            OleDbCommand lvCommand = new OleDbCommand();
+            lvCommand.Connection = dataConnection;
+            String elemSelects = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
+            lvCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemAtomicWeight";
+            OleDbDataReader lvReader = lvCommand.ExecuteReader();
+            while (lvReader.Read())
             {
-                object[] elemObj = new object[10];
-                int len = cbReader.GetValues(elemObj);
+                object[] elemObj = new object[elemSelects.Split(',').Length];
+                int len = lvReader.GetValues(elemObj);
                 String[] elemStrArr = Array.ConvertAll(elemObj, x => x.ToString());
                 lv.Items.Add(new ListViewItem(elemStrArr));
             }
-            cbReader.Close();
+            lvReader.Close();
         }
     }
 }
