@@ -15,6 +15,7 @@ namespace PeriodicalTable
     {
         private OleDbConnection dataConnection;
 
+        private Color lvColor = System.Drawing.ColorTranslator.FromHtml("#000000");
         public FormRptElementsByAtomicNum(OleDbConnection dataConnection)
         {
             this.dataConnection = dataConnection;
@@ -27,18 +28,18 @@ namespace PeriodicalTable
 
             listView.Columns.Clear();
             //string strCols = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
-            string strCols = "מספר זהות,שורה,טור,סימן,קבוצה,שם מלא,שם אנגלי,שם עברי,משקל אטומי,רמות אנרגיה";
+            string strCols = "ממשקל,עד משקל,מספר זהות,שורה,טור,סימן,קבוצה,שם מלא,שם אנגלי,שם עברי,משקל אטומי,רמות אנרגיה";
             string[] cols = strCols.Split(',');
             foreach (string col in cols)
             {
-                listView.Columns.Add(col, this.listView.Width / cols.Length, HorizontalAlignment.Center);
+                listView.Columns.Add(col, this.listView.Width / (cols.Length+1), HorizontalAlignment.Left);
             }
         }
 
         private void FromAtoomicChanged(object sender, EventArgs e)
         {
             this.toAtomic.Enabled = true;
-            this.searchBtn.Enabled = true;
+            this.addBtn.Enabled = true;
             String from = this.fromAtomic.Text;
             String cmd = " WHERE elemAtomicWeight >= " + from;
             FillFromDB(this.toAtomic, cmd);
@@ -49,7 +50,7 @@ namespace PeriodicalTable
             String from = this.fromAtomic.Text;
             String to = this.toAtomic.Text;
             String cmd = " WHERE elemAtomicWeight >= " + from + " AND elemAtomicWeight <= " + to;
-            FillFromDB(this.listView, cmd);
+            AddFromDB(this.listView, cmd);
         }
 
         private void FillFromDB(ComboBox cb, String cmd)
@@ -69,9 +70,8 @@ namespace PeriodicalTable
             }
             cbReader.Close();
         }
-        private void FillFromDB(ListView lv, String cmd)
+        private void AddFromDB(ListView lv, String cmd)
         {
-            lv.Items.Clear();
             OleDbCommand lvCommand = new OleDbCommand();
             lvCommand.Connection = dataConnection;
             String elemSelects = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
@@ -81,10 +81,27 @@ namespace PeriodicalTable
             {
                 object[] elemObj = new object[elemSelects.Split(',').Length];
                 int len = lvReader.GetValues(elemObj);
+                String[] twoCols = { this.fromAtomic.Text, this.toAtomic.Text };
                 String[] elemStrArr = Array.ConvertAll(elemObj, x => x.ToString());
-                lv.Items.Add(new ListViewItem(elemStrArr));
+                String[] itemArr = twoCols.Concat(elemStrArr).ToArray();
+                ListViewItem item = new ListViewItem(itemArr);
+                item.ForeColor = lvColor;
+                lv.Items.Add(item);
             }
             lvReader.Close();
+        }
+
+        private void clearBtnClick(object sender, EventArgs e)
+        {
+            this.listView.Items.Clear();
+        }
+
+        private void colorBtnClick(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            cd.ShowDialog();
+            colorBtn.ForeColor = cd.Color;
+            lvColor = cd.Color;
         }
     }
 }
