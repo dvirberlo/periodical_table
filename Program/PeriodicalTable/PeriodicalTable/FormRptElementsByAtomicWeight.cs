@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace PeriodicalTable
 {
-    public partial class FormRptElementsByAtomicNum : Form
+    public partial class FormRptElementsByAtomicWeight : Form
     {
         private OleDbConnection dataConnection;
 
         private Color lvColor = System.Drawing.ColorTranslator.FromHtml("#000000");
-        public FormRptElementsByAtomicNum(OleDbConnection dataConnection)
+        public FormRptElementsByAtomicWeight(OleDbConnection dataConnection)
         {
             this.dataConnection = dataConnection;
             InitializeComponent();
@@ -24,11 +24,11 @@ namespace PeriodicalTable
         }
         private void Setup(Object sender, EventArgs e)
         {
-            FillFromDB(this.elemFrom, "");
+            FillFromDB(this.fromAtomic, "");
 
             listView.Columns.Clear();
             //string strCols = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
-            string strCols = "ממספר,עד מספר,מספר זהות,שורה,טור,סימן,קבוצה,שם מלא,שם אנגלי,שם עברי,משקל אטומי,רמות אנרגיה";
+            string strCols = "ממשקל,עד משקל,מספר זהות,שורה,טור,סימן,קבוצה,שם מלא,שם אנגלי,שם עברי,משקל אטומי,רמות אנרגיה";
             string[] cols = strCols.Split(',');
             foreach (string col in cols)
             {
@@ -38,18 +38,18 @@ namespace PeriodicalTable
 
         private void FromAtoomicChanged(object sender, EventArgs e)
         {
-            this.elemTo.Enabled = true;
+            this.toAtomic.Enabled = true;
             this.addBtn.Enabled = true;
-            String from = this.elemFrom.Text;
-            String cmd = " WHERE elemID >= " + from;
-            FillFromDB(this.elemTo, cmd);
+            String from = this.fromAtomic.Text;
+            String cmd = " WHERE elemAtomicWeight >= " + from;
+            FillFromDB(this.toAtomic, cmd);
         }
 
         private void SearchBtnClick(object sender, EventArgs e)
         {
-            String from = this.elemFrom.Text;
-            String to = this.elemTo.Text;
-            String cmd = " WHERE elemID >= " + from + " AND elemID <= " + to;
+            String from = this.fromAtomic.Text;
+            String to = this.toAtomic.Text;
+            String cmd = " WHERE elemAtomicWeight >= " + from + " AND elemAtomicWeight <= " + to;
             AddFromDB(this.listView, cmd);
         }
 
@@ -58,8 +58,8 @@ namespace PeriodicalTable
             cb.Items.Clear();
             OleDbCommand cbCommand = new OleDbCommand();
             cbCommand.Connection = dataConnection;
-            String elemSelects = "elemID";
-            cbCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemID";
+            String elemSelects = "elemAtomicWeight";
+            cbCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemAtomicWeight";
             OleDbDataReader cbReader = cbCommand.ExecuteReader();
             while (cbReader.Read())
             {
@@ -74,8 +74,8 @@ namespace PeriodicalTable
         {
             OleDbCommand lvCommand = new OleDbCommand();
             lvCommand.Connection = dataConnection;
-            String elemSelects = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemID,elemEnergyLevels";
-            lvCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemID";
+            String elemSelects = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
+            lvCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemAtomicWeight";
             OleDbDataReader lvReader = lvCommand.ExecuteReader();
             bool first = true;
             while (lvReader.Read())
@@ -86,7 +86,7 @@ namespace PeriodicalTable
                 String[] itemArr;
                 if (first)
                 {
-                    String[] twoCols = { this.elemFrom.Text, this.elemTo.Text };
+                    String[] twoCols = { this.fromAtomic.Text, this.toAtomic.Text };
                     itemArr = twoCols.Concat(elemStrArr).ToArray();
                     first = false;
                 }

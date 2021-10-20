@@ -144,6 +144,11 @@ namespace PeriodicalTable
         }
 
         // reports
+        private void RptElementsByAtomicWeight(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormRptElementsByAtomicWeight(dataConnection));
+        }
+
         private void RptElementsByAtomicNum(object sender, EventArgs e)
         {
             ShowFormAndHide(new FormRptElementsByAtomicNum(dataConnection));

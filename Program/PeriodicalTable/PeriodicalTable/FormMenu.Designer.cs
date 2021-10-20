@@ -53,6 +53,7 @@
             this.periodicalTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementsByAtomicNumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elemntsByAtomicNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -246,7 +247,8 @@
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.elementsByAtomicNumToolStripMenuItem});
+            this.elementsByAtomicNumToolStripMenuItem,
+            this.elemntsByAtomicNumberToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "&Reports";
@@ -254,9 +256,16 @@
             // elementsByAtomicNumToolStripMenuItem
             // 
             this.elementsByAtomicNumToolStripMenuItem.Name = "elementsByAtomicNumToolStripMenuItem";
-            this.elementsByAtomicNumToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
-            this.elementsByAtomicNumToolStripMenuItem.Text = "&Elements By Atomic Number";
-            this.elementsByAtomicNumToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByAtomicNum);
+            this.elementsByAtomicNumToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.elementsByAtomicNumToolStripMenuItem.Text = "Elements By Atomic &Weight";
+            this.elementsByAtomicNumToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByAtomicWeight);
+            // 
+            // elemntsByAtomicNumberToolStripMenuItem
+            // 
+            this.elemntsByAtomicNumberToolStripMenuItem.Name = "elemntsByAtomicNumberToolStripMenuItem";
+            this.elemntsByAtomicNumberToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.elemntsByAtomicNumberToolStripMenuItem.Text = "Elemnts By Atomic &Number";
+            this.elemntsByAtomicNumberToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByAtomicNum);
             // 
             // FormMenu
             // 
@@ -301,5 +310,6 @@
         private System.Windows.Forms.ToolStripMenuItem periodicalTableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elementsByAtomicNumToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem elemntsByAtomicNumberToolStripMenuItem;
     }
 }

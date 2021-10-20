@@ -155,6 +155,12 @@
     <Compile Include="FormRptElementsByAtomicNum.Designer.cs">
       <DependentUpon>FormRptElementsByAtomicNum.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRptElementsByAtomicWeight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRptElementsByAtomicWeight.Designer.cs">
+      <DependentUpon>FormRptElementsByAtomicWeight.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTblCities.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRptElementsByAtomicNum.resx">
       <DependentUpon>FormRptElementsByAtomicNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRptElementsByAtomicWeight.resx">
+      <DependentUpon>FormRptElementsByAtomicWeight.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTblCities.resx">
       <DependentUpon>FormTblCities.cs</DependentUpon>

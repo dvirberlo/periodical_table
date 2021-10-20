@@ -1,6 +1,6 @@
 ﻿namespace PeriodicalTable
 {
-    partial class FormRptElementsByAtomicNum
+    partial class FormRptElementsByAtomicWeight
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.elemFrom = new System.Windows.Forms.ComboBox();
-            this.elemTo = new System.Windows.Forms.ComboBox();
+            this.fromAtomic = new System.Windows.Forms.ComboBox();
+            this.toAtomic = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
@@ -39,34 +39,34 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // elemFrom
+            // fromAtomic
             // 
-            this.elemFrom.FormattingEnabled = true;
-            this.elemFrom.Location = new System.Drawing.Point(854, 88);
-            this.elemFrom.Name = "elemFrom";
-            this.elemFrom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.elemFrom.Size = new System.Drawing.Size(115, 24);
-            this.elemFrom.TabIndex = 0;
-            this.elemFrom.TextChanged += new System.EventHandler(this.FromAtoomicChanged);
+            this.fromAtomic.FormattingEnabled = true;
+            this.fromAtomic.Location = new System.Drawing.Point(854, 88);
+            this.fromAtomic.Name = "fromAtomic";
+            this.fromAtomic.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fromAtomic.Size = new System.Drawing.Size(115, 24);
+            this.fromAtomic.TabIndex = 0;
+            this.fromAtomic.TextChanged += new System.EventHandler(this.FromAtoomicChanged);
             // 
-            // elemTo
+            // toAtomic
             // 
-            this.elemTo.Enabled = false;
-            this.elemTo.FormattingEnabled = true;
-            this.elemTo.Location = new System.Drawing.Point(715, 88);
-            this.elemTo.Name = "elemTo";
-            this.elemTo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.elemTo.Size = new System.Drawing.Size(109, 24);
-            this.elemTo.TabIndex = 1;
+            this.toAtomic.Enabled = false;
+            this.toAtomic.FormattingEnabled = true;
+            this.toAtomic.Location = new System.Drawing.Point(715, 88);
+            this.toAtomic.Name = "toAtomic";
+            this.toAtomic.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toAtomic.Size = new System.Drawing.Size(109, 24);
+            this.toAtomic.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(989, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 17);
+            this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "טווח מספר אטומי";
+            this.label1.Text = "טווח משקל אטומי";
             // 
             // label2
             // 
@@ -126,9 +126,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(434, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(226, 25);
+            this.label3.Size = new System.Drawing.Size(229, 25);
             this.label3.TabIndex = 8;
-            this.label3.Text = "דוח יסודות לפי מספר אטומי";
+            this.label3.Text = "דוח יסודות לפי משקל אטומי";
             // 
             // FormRptElementsByAtomicNum
             // 
@@ -142,8 +142,8 @@
             this.Controls.Add(this.listView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.elemTo);
-            this.Controls.Add(this.elemFrom);
+            this.Controls.Add(this.toAtomic);
+            this.Controls.Add(this.fromAtomic);
             this.Name = "FormRptElementsByAtomicNum";
             this.Text = "FormRptElementsByAtomicNum";
             this.ResumeLayout(false);
@@ -153,8 +153,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox elemFrom;
-        private System.Windows.Forms.ComboBox elemTo;
+        private System.Windows.Forms.ComboBox fromAtomic;
+        private System.Windows.Forms.ComboBox toAtomic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView;
