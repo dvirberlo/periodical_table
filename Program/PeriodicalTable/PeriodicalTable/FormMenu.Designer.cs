@@ -54,6 +54,8 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementsByAtomicNumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elemntsByAtomicNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementsByGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementsByPropertyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -248,7 +250,9 @@
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.elementsByAtomicNumToolStripMenuItem,
-            this.elemntsByAtomicNumberToolStripMenuItem});
+            this.elemntsByAtomicNumberToolStripMenuItem,
+            this.elementsByGroupToolStripMenuItem,
+            this.elementsByPropertyToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "&Reports";
@@ -266,6 +270,20 @@
             this.elemntsByAtomicNumberToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.elemntsByAtomicNumberToolStripMenuItem.Text = "Elemnts By Atomic &Number";
             this.elemntsByAtomicNumberToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByAtomicNum);
+            // 
+            // elementsByGroupToolStripMenuItem
+            // 
+            this.elementsByGroupToolStripMenuItem.Name = "elementsByGroupToolStripMenuItem";
+            this.elementsByGroupToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.elementsByGroupToolStripMenuItem.Text = "Elements By &Group";
+            this.elementsByGroupToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByGroup);
+            // 
+            // elementsByPropertyToolStripMenuItem
+            // 
+            this.elementsByPropertyToolStripMenuItem.Name = "elementsByPropertyToolStripMenuItem";
+            this.elementsByPropertyToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.elementsByPropertyToolStripMenuItem.Text = "Elements By &Property";
+            this.elementsByPropertyToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByProperty);
             // 
             // FormMenu
             // 
@@ -311,5 +329,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elementsByAtomicNumToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elemntsByAtomicNumberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem elementsByGroupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem elementsByPropertyToolStripMenuItem;
     }
 }

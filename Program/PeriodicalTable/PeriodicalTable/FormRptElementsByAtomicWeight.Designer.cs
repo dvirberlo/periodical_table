@@ -130,7 +130,7 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "דוח יסודות לפי משקל אטומי";
             // 
-            // FormRptElementsByAtomicNum
+            // FormRptElementsByAtomicWeight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,8 +144,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toAtomic);
             this.Controls.Add(this.fromAtomic);
-            this.Name = "FormRptElementsByAtomicNum";
-            this.Text = "FormRptElementsByAtomicNum";
+            this.Name = "FormRptElementsByAtomicWeight";
+            this.Text = "FormRptElementsByAtomicWeight";
             this.ResumeLayout(false);
             this.PerformLayout();
 

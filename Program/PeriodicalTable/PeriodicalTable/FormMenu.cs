@@ -154,6 +154,15 @@ namespace PeriodicalTable
             ShowFormAndHide(new FormRptElementsByAtomicNum(dataConnection));
         }
 
+        private void RptElementsByGroup(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormRptElementsByGroup(dataConnection));
+        }
+
+        private void RptElementsByProperty(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormRptElementsByProperty(dataConnection));
+        }
 
 
     }

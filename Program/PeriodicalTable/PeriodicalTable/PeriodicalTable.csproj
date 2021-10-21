@@ -149,6 +149,18 @@
     <Compile Include="FormPeriodicalTable.Designer.cs">
       <DependentUpon>FormPeriodicalTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRptElementsByProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRptElementsByProperty.Designer.cs">
+      <DependentUpon>FormRptElementsByProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRptElementsByGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRptElementsByGroup.Designer.cs">
+      <DependentUpon>FormRptElementsByGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRptElementsByAtomicNum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +270,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPeriodicalTable.resx">
       <DependentUpon>FormPeriodicalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRptElementsByProperty.resx">
+      <DependentUpon>FormRptElementsByProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRptElementsByGroup.resx">
+      <DependentUpon>FormRptElementsByGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRptElementsByAtomicNum.resx">
       <DependentUpon>FormRptElementsByAtomicNum.cs</DependentUpon>
