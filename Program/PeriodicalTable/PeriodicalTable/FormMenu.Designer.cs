@@ -56,6 +56,7 @@
             this.elemntsByAtomicNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementsByGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementsByPropertyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementsByCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -252,7 +253,8 @@
             this.elementsByAtomicNumToolStripMenuItem,
             this.elemntsByAtomicNumberToolStripMenuItem,
             this.elementsByGroupToolStripMenuItem,
-            this.elementsByPropertyToolStripMenuItem});
+            this.elementsByPropertyToolStripMenuItem,
+            this.elementsByCategoryToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.reportsToolStripMenuItem.Text = "&Reports";
@@ -284,6 +286,13 @@
             this.elementsByPropertyToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.elementsByPropertyToolStripMenuItem.Text = "Elements By &Property";
             this.elementsByPropertyToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByProperty);
+            // 
+            // elementsByCategoryToolStripMenuItem
+            // 
+            this.elementsByCategoryToolStripMenuItem.Name = "elementsByCategoryToolStripMenuItem";
+            this.elementsByCategoryToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.elementsByCategoryToolStripMenuItem.Text = "Elements By &Category";
+            this.elementsByCategoryToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByCategory);
             // 
             // FormMenu
             // 
@@ -331,5 +340,6 @@
         private System.Windows.Forms.ToolStripMenuItem elemntsByAtomicNumberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elementsByGroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elementsByPropertyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem elementsByCategoryToolStripMenuItem;
     }
 }

@@ -164,6 +164,11 @@ namespace PeriodicalTable
             ShowFormAndHide(new FormRptElementsByProperty(dataConnection));
         }
 
+        private void RptElementsByCategory(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormRptElementsByCategory(dataConnection));
+        }
+
 
     }
 }
