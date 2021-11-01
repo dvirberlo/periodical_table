@@ -169,6 +169,11 @@ namespace PeriodicalTable
             ShowFormAndHide(new FormRptElementsByCategory(dataConnection));
         }
 
+        private void ChartElementsByAtomicWeight(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormChartElementsByAtomicWeight(dataConnection));
+        }
+
 
     }
 }

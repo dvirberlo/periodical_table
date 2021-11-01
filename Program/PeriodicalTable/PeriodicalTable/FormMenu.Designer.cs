@@ -57,6 +57,8 @@
             this.elementsByGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementsByPropertyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementsByCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementsByAtomicWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +70,8 @@
             this.addToolStripMenuItem,
             this.updateToolStripMenuItem,
             this.periodicalTableToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.chartsToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(800, 28);
@@ -294,6 +297,21 @@
             this.elementsByCategoryToolStripMenuItem.Text = "Elements By &Category";
             this.elementsByCategoryToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByCategory);
             // 
+            // chartsToolStripMenuItem
+            // 
+            this.chartsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.elementsByAtomicWeightToolStripMenuItem});
+            this.chartsToolStripMenuItem.Name = "chartsToolStripMenuItem";
+            this.chartsToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.chartsToolStripMenuItem.Text = "&Charts";
+            // 
+            // elementsByAtomicWeightToolStripMenuItem
+            // 
+            this.elementsByAtomicWeightToolStripMenuItem.Name = "elementsByAtomicWeightToolStripMenuItem";
+            this.elementsByAtomicWeightToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.elementsByAtomicWeightToolStripMenuItem.Text = "Elements By Atomic &Weight";
+            this.elementsByAtomicWeightToolStripMenuItem.Click += new System.EventHandler(this.ChartElementsByAtomicWeight);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -341,5 +359,7 @@
         private System.Windows.Forms.ToolStripMenuItem elementsByGroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elementsByPropertyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elementsByCategoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chartsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem elementsByAtomicWeightToolStripMenuItem;
     }
 }
