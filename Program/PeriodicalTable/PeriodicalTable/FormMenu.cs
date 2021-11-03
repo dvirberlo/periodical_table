@@ -169,9 +169,30 @@ namespace PeriodicalTable
             ShowFormAndHide(new FormRptElementsByCategory(dataConnection));
         }
 
+        // charts
         private void ChartElementsByAtomicWeight(object sender, EventArgs e)
         {
             ShowFormAndHide(new FormChartElementsByAtomicWeight(dataConnection));
+        }
+
+        private void ChartElementsByAtomicNum(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormChartElementsByAtomicNum(dataConnection));
+        }
+
+        private void ChartElementsByGroup(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormChartElementsByGroup(dataConnection));
+        }
+
+        private void ChartElementsByProperty(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormChartElementsByProperty(dataConnection));
+        }
+
+        private void ChartElementsByCategory(object sender, EventArgs e)
+        {
+            ShowFormAndHide(new FormChartElementsByCategory(dataConnection));
         }
 
 

@@ -12,11 +12,11 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PeriodicalTable
 {
-    public partial class FormChartElementsByAtomicWeight : Form
+    public partial class FormChartElementsByGroup : Form
     {
         private OleDbConnection dataConnection;
 
-        public FormChartElementsByAtomicWeight(OleDbConnection dataConnection)
+        public FormChartElementsByGroup(OleDbConnection dataConnection)
         {
             this.dataConnection = dataConnection;
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace PeriodicalTable
             String countStr = "כמות היסודות";
 
             // dataGridView
-            string strCols = "טווח,כמות היסודות";
+            string strCols = "קבוצה,כמות היסודות";
             string[] cols = strCols.Split(',');
             foreach (string gCol in cols)
             {
@@ -39,42 +39,27 @@ namespace PeriodicalTable
             chart1.Series.Clear();
             chart1.Series.Add(countStr);
 
-
             // load database:
-            String col = "elemAtomicWeight";
-            double min = Double.MaxValue, max = Double.MinValue, step = 50.0;
+            String col = "elemGroup";
+            List<String> groups = new List<String>();
 
 
             OleDbCommand dataCmd = new OleDbCommand();
             dataCmd.Connection = dataConnection;
-            dataCmd.CommandText = "SELECT MIN(" + col + ")" + " FROM tblElements ";
+            dataCmd.CommandText = "SELECT groupName FROM tblGroups ";
             OleDbDataReader dataReader = dataCmd.ExecuteReader();
-            if (dataReader.Read())
+            while (dataReader.Read())
             {
                 object[] obj = new object[1];
                 dataReader.GetValues(obj);
-                min = Convert.ToDouble(obj[0]);
+                groups.Add(obj[0].ToString());
             }
             dataReader.Close();
-            OleDbCommand dataCmd2 = new OleDbCommand();
-            dataCmd2.Connection = dataConnection;
-            dataCmd2.CommandText = "SELECT Max(" + col + ")" + " FROM tblElements ";
-            OleDbDataReader dataReader2 = dataCmd2.ExecuteReader();
-            if (dataReader2.Read())
-            {
-                object[] obj = new object[1];
-                dataReader2.GetValues(obj);
-                max = Convert.ToDouble(obj[0]);
-            }
-            dataReader2.Close();
 
-            for (double i = 0; i < Math.Ceiling((max - min) / step); i++)
+            foreach (String group in groups)
             {
-                double from = (min + step * i), to = (min + step * (i+1));
-                String cmd = col + " >= " + from.ToString() + " AND " + col + " < " + to.ToString();
-
-                String str = Math.Ceiling(1 + min + step * i).ToString() + " - " + Math.Floor(min + step * (i + 1)).ToString();
-                AppendFromDB(col, cmd, this.dataGridView1, this.chart1, countStr, str);
+                String cmd = col + " = '" + group + "' ";
+                AppendFromDB(col, cmd, this.dataGridView1, this.chart1, countStr, group);
             }
         }
 

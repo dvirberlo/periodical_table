@@ -12,11 +12,11 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PeriodicalTable
 {
-    public partial class FormChartElementsByAtomicWeight : Form
+    public partial class FormChartElementsByAtomicNum : Form
     {
         private OleDbConnection dataConnection;
 
-        public FormChartElementsByAtomicWeight(OleDbConnection dataConnection)
+        public FormChartElementsByAtomicNum(OleDbConnection dataConnection)
         {
             this.dataConnection = dataConnection;
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace PeriodicalTable
             {
                 this.dataGridView1.Columns.Add("col_"+gCol, gCol);
             }
+
             // chart
             chart1.ChartAreas[0].AxisX.LabelStyle.Angle = -90;
             chart1.ChartAreas["ChartArea1"].AxisX.Interval = 1;
@@ -41,8 +42,8 @@ namespace PeriodicalTable
 
 
             // load database:
-            String col = "elemAtomicWeight";
-            double min = Double.MaxValue, max = Double.MinValue, step = 50.0;
+            String col = "elemID";
+            int min = int.MaxValue, max = int.MinValue, step = 10;
 
 
             OleDbCommand dataCmd = new OleDbCommand();
@@ -53,7 +54,7 @@ namespace PeriodicalTable
             {
                 object[] obj = new object[1];
                 dataReader.GetValues(obj);
-                min = Convert.ToDouble(obj[0]);
+                min = Convert.ToInt32(obj[0]);
             }
             dataReader.Close();
             OleDbCommand dataCmd2 = new OleDbCommand();
@@ -64,22 +65,22 @@ namespace PeriodicalTable
             {
                 object[] obj = new object[1];
                 dataReader2.GetValues(obj);
-                max = Convert.ToDouble(obj[0]);
+                max = Convert.ToInt32(obj[0]);
             }
             dataReader2.Close();
 
-            for (double i = 0; i < Math.Ceiling((max - min) / step); i++)
+            for (int i = 0; i < 1 + (max - min - 1) / step; i++)
             {
                 double from = (min + step * i), to = (min + step * (i+1));
                 String cmd = col + " >= " + from.ToString() + " AND " + col + " < " + to.ToString();
 
-                String str = Math.Ceiling(1 + min + step * i).ToString() + " - " + Math.Floor(min + step * (i + 1)).ToString();
+                String str = (min + step * i).ToString() + " - " + (min + step * (i+1)).ToString();
                 AppendFromDB(col, cmd, this.dataGridView1, this.chart1, countStr, str);
             }
         }
 
 
-        private void AppendFromDB(String col, String cmd, DataGridView dgv, Chart chart, String countStr, String str)
+        private void AppendFromDB(String col,String cmd, DataGridView dgv, Chart chart, String countStr, String str)
         {
             OleDbCommand dataCmd = new OleDbCommand();
             dataCmd.Connection = dataConnection;

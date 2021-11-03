@@ -59,6 +59,10 @@
             this.elementsByCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elementsByAtomicWeightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementsByAtomicNumToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementsByGroupToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementsByPropertyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementsByCategoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -300,7 +304,11 @@
             // chartsToolStripMenuItem
             // 
             this.chartsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.elementsByAtomicWeightToolStripMenuItem});
+            this.elementsByAtomicWeightToolStripMenuItem,
+            this.elementsByAtomicNumToolStripMenuItem1,
+            this.elementsByGroupToolStripMenuItem1,
+            this.elementsByPropertyToolStripMenuItem1,
+            this.elementsByCategoryToolStripMenuItem1});
             this.chartsToolStripMenuItem.Name = "chartsToolStripMenuItem";
             this.chartsToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.chartsToolStripMenuItem.Text = "&Charts";
@@ -311,6 +319,34 @@
             this.elementsByAtomicWeightToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.elementsByAtomicWeightToolStripMenuItem.Text = "Elements By Atomic &Weight";
             this.elementsByAtomicWeightToolStripMenuItem.Click += new System.EventHandler(this.ChartElementsByAtomicWeight);
+            // 
+            // elementsByAtomicNumToolStripMenuItem1
+            // 
+            this.elementsByAtomicNumToolStripMenuItem1.Name = "elementsByAtomicNumToolStripMenuItem1";
+            this.elementsByAtomicNumToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
+            this.elementsByAtomicNumToolStripMenuItem1.Text = "Elements By Atomic &Num";
+            this.elementsByAtomicNumToolStripMenuItem1.Click += new System.EventHandler(this.ChartElementsByAtomicNum);
+            // 
+            // elementsByGroupToolStripMenuItem1
+            // 
+            this.elementsByGroupToolStripMenuItem1.Name = "elementsByGroupToolStripMenuItem1";
+            this.elementsByGroupToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
+            this.elementsByGroupToolStripMenuItem1.Text = "Elements By &Group";
+            this.elementsByGroupToolStripMenuItem1.Click += new System.EventHandler(this.ChartElementsByGroup);
+            // 
+            // elementsByPropertyToolStripMenuItem1
+            // 
+            this.elementsByPropertyToolStripMenuItem1.Name = "elementsByPropertyToolStripMenuItem1";
+            this.elementsByPropertyToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
+            this.elementsByPropertyToolStripMenuItem1.Text = "Elements By &Property";
+            this.elementsByPropertyToolStripMenuItem1.Click += new System.EventHandler(this.ChartElementsByProperty);
+            // 
+            // elementsByCategoryToolStripMenuItem1
+            // 
+            this.elementsByCategoryToolStripMenuItem1.Name = "elementsByCategoryToolStripMenuItem1";
+            this.elementsByCategoryToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
+            this.elementsByCategoryToolStripMenuItem1.Text = "Elements By &Category";
+            this.elementsByCategoryToolStripMenuItem1.Click += new System.EventHandler(this.ChartElementsByCategory);
             // 
             // FormMenu
             // 
@@ -361,5 +397,9 @@
         private System.Windows.Forms.ToolStripMenuItem elementsByCategoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chartsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem elementsByAtomicWeightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem elementsByAtomicNumToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem elementsByGroupToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem elementsByPropertyToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem elementsByCategoryToolStripMenuItem1;
     }
 }

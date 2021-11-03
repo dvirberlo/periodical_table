@@ -132,6 +132,30 @@
     <Compile Include="FormAddUser.designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChartElementsByCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChartElementsByCategory.Designer.cs">
+      <DependentUpon>FormChartElementsByCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChartElementsByProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChartElementsByProperty.Designer.cs">
+      <DependentUpon>FormChartElementsByProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChartElementsByGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChartElementsByGroup.Designer.cs">
+      <DependentUpon>FormChartElementsByGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChartElementsByAtomicNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChartElementsByAtomicNum.Designer.cs">
+      <DependentUpon>FormChartElementsByAtomicNum.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +298,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChartElementsByCategory.resx">
+      <DependentUpon>FormChartElementsByCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChartElementsByProperty.resx">
+      <DependentUpon>FormChartElementsByProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChartElementsByGroup.resx">
+      <DependentUpon>FormChartElementsByGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChartElementsByAtomicNum.resx">
+      <DependentUpon>FormChartElementsByAtomicNum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
