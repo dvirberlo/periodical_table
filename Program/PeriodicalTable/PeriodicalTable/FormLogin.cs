@@ -14,9 +14,13 @@ namespace PeriodicalTable
     public partial class FormLogin : Form
     {
         private OleDbConnection dataConnection;
+        private bool isManager;
         public FormLogin()
         {
             InitializeComponent();
+            this.contBtn.Visible = false;
+            this.welcomeLbl.Text = "";
+            this.pictureBox1.ImageLocation = "";
             OpenDb();
         }
 
@@ -42,25 +46,27 @@ namespace PeriodicalTable
             {
                 OleDbCommand dataCommand = new OleDbCommand();
                 dataCommand.Connection = dataConnection;
-                dataCommand.CommandText = "SELECT userID, userPassword FROM tblUsers WHERE userID="+this.idNumber.Text;
+                dataCommand.CommandText = "SELECT userID, userPassword, userIsManager, userFirstName, userLastName, userPicture FROM tblUsers WHERE userID=" + this.idNumber.Text;
                 OleDbDataReader dataReader = dataCommand.ExecuteReader();
                 dataReader.Read();
                 id = dataReader.GetInt32(0);
                 password = dataReader.GetString(1);
+                this.isManager = dataReader.GetBoolean(2);
+                String msg = "ברוך הבא " + dataReader.GetString(3) + " " + dataReader.GetString(4);
+                String pic = dataReader.GetValue(5).ToString();
 
                 if (password == this.password.Text)
                 {
-                    this.Hide();
-                    // FormMenu frMenu = new FormMenu(dataConnection);
-                    FormMenu frMenu = new FormMenu();
-                    frMenu.Show();
-                    frMenu.Disposed += new EventHandler(frMenu_Disposed);
+                    pictureBox1.ImageLocation = pic;
+                    this.welcomeLbl.Text = msg;
+                    this.contBtn.Visible = true;
                 }
                 else
                 {
                     line = "Invalid Password: " + this.password.Text;
                     MessageBox.Show(line, "Error");
                 }
+                dataReader.Close();
             }
             catch (Exception err)
             {
@@ -75,5 +81,14 @@ namespace PeriodicalTable
             this.Show();
             this.Activate();
         }
+
+        private void continueClick(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMenu frMenu = new FormMenu(dataConnection, isManager);
+            frMenu.Show();
+            frMenu.Disposed += new EventHandler(frMenu_Disposed);
+        }
+
     }
 }
