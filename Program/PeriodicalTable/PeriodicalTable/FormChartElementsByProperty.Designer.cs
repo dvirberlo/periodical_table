@@ -41,21 +41,21 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(434, 21);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(551, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(215, 25);
+            this.label3.Size = new System.Drawing.Size(331, 31);
             this.label3.TabIndex = 8;
             this.label3.Text = "התפלגות יסודות לפי תכונה";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(791, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(995, 56);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(379, 585);
+            this.dataGridView1.Size = new System.Drawing.Size(475, 685);
             this.dataGridView1.TabIndex = 9;
             // 
             // chart1
@@ -70,7 +70,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(773, 585);
+            this.chart1.Size = new System.Drawing.Size(977, 685);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
             // 
@@ -78,7 +78,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.BackColor = System.Drawing.Color.BurlyWood;
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
