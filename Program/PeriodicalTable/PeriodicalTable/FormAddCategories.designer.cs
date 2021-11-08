@@ -34,10 +34,11 @@
             this.userFirstName = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblCategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetCategories = new PeriodicalTable.DataSetCategories();
             this.tblCategoriesTableAdapter = new PeriodicalTable.DataSetCategoriesTableAdapters.tblCategoriesTableAdapter();
-            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl01 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblCategoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetCategories)).BeginInit();
@@ -46,18 +47,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(371, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(599, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 29);
+            this.label1.Size = new System.Drawing.Size(206, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "הוספת קטגוריות";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(680, 56);
+            this.label3.Location = new System.Drawing.Point(780, 92);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 17);
@@ -66,7 +67,7 @@
             // 
             // userFirstName
             // 
-            this.userFirstName.Location = new System.Drawing.Point(524, 56);
+            this.userFirstName.Location = new System.Drawing.Point(605, 89);
             this.userFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.userFirstName.Name = "userFirstName";
             this.userFirstName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -76,7 +77,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonAdd.Location = new System.Drawing.Point(459, 261);
+            this.buttonAdd.Location = new System.Drawing.Point(643, 151);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(107, 42);
@@ -96,8 +97,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1074, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(1458, 431);
             this.dataGridView1.TabIndex = 26;
+            // 
+            // categoryNameDataGridViewTextBoxColumn
+            // 
+            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "categoryName";
+            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "שם";
+            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
             // 
             // tblCategoriesBindingSource
             // 
@@ -113,17 +120,23 @@
             // 
             this.tblCategoriesTableAdapter.ClearBeforeFill = true;
             // 
-            // categoryNameDataGridViewTextBoxColumn
+            // lbl01
             // 
-            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "categoryName";
-            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "שם";
-            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
+            this.lbl01.AutoSize = true;
+            this.lbl01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl01.Location = new System.Drawing.Point(654, 269);
+            this.lbl01.Name = "lbl01";
+            this.lbl01.Size = new System.Drawing.Size(72, 20);
+            this.lbl01.TabIndex = 27;
+            this.lbl01.Text = "קטגוריות";
             // 
             // FormAddCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 552);
+            this.BackColor = System.Drawing.Color.PaleGreen;
+            this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.lbl01);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.userFirstName);
@@ -131,7 +144,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAddCategories";
-            this.Text = "FormAddGroups";
+            this.Text = "FormAddCategories";
             this.Load += new System.EventHandler(this.FormAddCategories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblCategoriesBindingSource)).EndInit();
@@ -152,6 +165,7 @@
         private System.Windows.Forms.BindingSource tblCategoriesBindingSource;
         private DataSetCategoriesTableAdapters.tblCategoriesTableAdapter tblCategoriesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lbl01;
     }
 }
 

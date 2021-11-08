@@ -33,17 +33,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.userFirstName = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupColorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetGroups = new PeriodicalTable.DataSetGroups();
             this.tblGroupsTableAdapter = new PeriodicalTable.DataSetGroupsTableAdapters.tblGroupsTableAdapter();
             this.groupColor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.colorPicker = new System.Windows.Forms.Button();
-            this.groupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupColorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGroupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetGroups)).BeginInit();
@@ -52,18 +51,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(371, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(591, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 29);
+            this.label1.Size = new System.Drawing.Size(184, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "הוספת קבוצות";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(680, 56);
+            this.label3.Location = new System.Drawing.Point(937, 73);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 17);
@@ -72,7 +71,7 @@
             // 
             // userFirstName
             // 
-            this.userFirstName.Location = new System.Drawing.Point(524, 56);
+            this.userFirstName.Location = new System.Drawing.Point(763, 73);
             this.userFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.userFirstName.Name = "userFirstName";
             this.userFirstName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -82,7 +81,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonAdd.Location = new System.Drawing.Point(459, 261);
+            this.buttonAdd.Location = new System.Drawing.Point(610, 176);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(107, 42);
@@ -90,15 +89,6 @@
             this.buttonAdd.Text = "הוסף";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(770, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(283, 243);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -112,8 +102,20 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1074, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(1458, 431);
             this.dataGridView1.TabIndex = 26;
+            // 
+            // groupNameDataGridViewTextBoxColumn
+            // 
+            this.groupNameDataGridViewTextBoxColumn.DataPropertyName = "groupName";
+            this.groupNameDataGridViewTextBoxColumn.HeaderText = "שם";
+            this.groupNameDataGridViewTextBoxColumn.Name = "groupNameDataGridViewTextBoxColumn";
+            // 
+            // groupColorDataGridViewTextBoxColumn
+            // 
+            this.groupColorDataGridViewTextBoxColumn.DataPropertyName = "groupColor";
+            this.groupColorDataGridViewTextBoxColumn.HeaderText = "צבע";
+            this.groupColorDataGridViewTextBoxColumn.Name = "groupColorDataGridViewTextBoxColumn";
             // 
             // tblGroupsBindingSource
             // 
@@ -131,15 +133,16 @@
             // 
             // groupColor
             // 
-            this.groupColor.Location = new System.Drawing.Point(127, 56);
+            this.groupColor.Location = new System.Drawing.Point(423, 73);
             this.groupColor.Name = "groupColor";
+            this.groupColor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupColor.Size = new System.Drawing.Size(143, 22);
             this.groupColor.TabIndex = 27;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(309, 56);
+            this.label2.Location = new System.Drawing.Point(607, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 28;
@@ -147,36 +150,35 @@
             // 
             // colorPicker
             // 
-            this.colorPicker.Location = new System.Drawing.Point(27, 53);
+            this.colorPicker.Location = new System.Drawing.Point(342, 70);
             this.colorPicker.Name = "colorPicker";
-            this.colorPicker.Size = new System.Drawing.Size(75, 23);
+            this.colorPicker.Size = new System.Drawing.Size(75, 25);
             this.colorPicker.TabIndex = 29;
             this.colorPicker.Text = "בחר צבע";
             this.colorPicker.UseVisualStyleBackColor = true;
             this.colorPicker.Click += new System.EventHandler(this.ColorPickerClick);
             // 
-            // groupNameDataGridViewTextBoxColumn
+            // label4
             // 
-            this.groupNameDataGridViewTextBoxColumn.DataPropertyName = "groupName";
-            this.groupNameDataGridViewTextBoxColumn.HeaderText = "שם";
-            this.groupNameDataGridViewTextBoxColumn.Name = "groupNameDataGridViewTextBoxColumn";
-            // 
-            // groupColorDataGridViewTextBoxColumn
-            // 
-            this.groupColorDataGridViewTextBoxColumn.DataPropertyName = "groupColor";
-            this.groupColorDataGridViewTextBoxColumn.HeaderText = "צבע";
-            this.groupColorDataGridViewTextBoxColumn.Name = "groupColorDataGridViewTextBoxColumn";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(641, 287);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 20);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "קבוצות";
             // 
             // FormAddGroups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 552);
+            this.BackColor = System.Drawing.Color.PaleGreen;
+            this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.colorPicker);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupColor);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.userFirstName);
             this.Controls.Add(this.label3);
@@ -185,7 +187,6 @@
             this.Name = "FormAddGroups";
             this.Text = "FormAddGroups";
             this.Load += new System.EventHandler(this.FormAddGroups_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGroupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetGroups)).EndInit();
@@ -200,7 +201,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox userFirstName;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DataSetGroups dataSetGroups;
         private System.Windows.Forms.BindingSource tblGroupsBindingSource;
@@ -210,6 +210,7 @@
         private System.Windows.Forms.Button colorPicker;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupColorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label4;
     }
 }
 

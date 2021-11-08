@@ -52,14 +52,6 @@
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tblElementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetElements = new PeriodicalTable.DataSetElements();
-            this.label11 = new System.Windows.Forms.Label();
-            this.userPassword = new System.Windows.Forms.TextBox();
-            this.tblElementsTableAdapter = new PeriodicalTable.DataSetElementsTableAdapters.tblElementsTableAdapter();
-            this.label12 = new System.Windows.Forms.Label();
-            this.energyLevels = new System.Windows.Forms.TextBox();
-            this.enName = new System.Windows.Forms.TextBox();
             this.elemSymbolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.elemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.elemFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +63,15 @@
             this.elemAtomicWeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.elemEnergyLevelsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.elemPictureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblElementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetElements = new PeriodicalTable.DataSetElements();
+            this.label11 = new System.Windows.Forms.Label();
+            this.userPassword = new System.Windows.Forms.TextBox();
+            this.tblElementsTableAdapter = new PeriodicalTable.DataSetElementsTableAdapters.tblElementsTableAdapter();
+            this.label12 = new System.Windows.Forms.Label();
+            this.energyLevels = new System.Windows.Forms.TextBox();
+            this.enName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblElementsBindingSource)).BeginInit();
@@ -80,18 +81,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(371, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(596, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 29);
+            this.label1.Size = new System.Drawing.Size(178, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "הוספת יסודות";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(675, 55);
+            this.label2.Location = new System.Drawing.Point(1104, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 17);
@@ -100,16 +101,17 @@
             // 
             // userId
             // 
-            this.userId.Location = new System.Drawing.Point(533, 53);
+            this.userId.Location = new System.Drawing.Point(934, 55);
             this.userId.Margin = new System.Windows.Forms.Padding(4);
             this.userId.Name = "userId";
+            this.userId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.userId.Size = new System.Drawing.Size(132, 22);
             this.userId.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(428, 55);
+            this.label3.Location = new System.Drawing.Point(738, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 17);
@@ -118,17 +120,17 @@
             // 
             // userFirstName
             // 
-            this.userFirstName.Location = new System.Drawing.Point(287, 53);
+            this.userFirstName.Location = new System.Drawing.Point(565, 53);
             this.userFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.userFirstName.Name = "userFirstName";
             this.userFirstName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.userFirstName.Size = new System.Drawing.Size(132, 22);
+            this.userFirstName.Size = new System.Drawing.Size(143, 22);
             this.userFirstName.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(160, 55);
+            this.label4.Location = new System.Drawing.Point(1104, 102);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 17);
@@ -137,7 +139,7 @@
             // 
             // userLastName
             // 
-            this.userLastName.Location = new System.Drawing.Point(16, 53);
+            this.userLastName.Location = new System.Drawing.Point(934, 101);
             this.userLastName.Margin = new System.Windows.Forms.Padding(4);
             this.userLastName.Name = "userLastName";
             this.userLastName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -147,7 +149,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(672, 106);
+            this.label5.Location = new System.Drawing.Point(738, 108);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 17);
@@ -157,7 +159,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(437, 106);
+            this.label6.Location = new System.Drawing.Point(456, 102);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
@@ -166,7 +168,7 @@
             // 
             // userAddress
             // 
-            this.userAddress.Location = new System.Drawing.Point(236, 105);
+            this.userAddress.Location = new System.Drawing.Point(240, 97);
             this.userAddress.Margin = new System.Windows.Forms.Padding(4);
             this.userAddress.Name = "userAddress";
             this.userAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -176,7 +178,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(163, 106);
+            this.label7.Location = new System.Drawing.Point(1093, 165);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 17);
@@ -186,7 +188,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.buttonAdd.Location = new System.Drawing.Point(459, 261);
+            this.buttonAdd.Location = new System.Drawing.Point(601, 230);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(107, 42);
@@ -198,17 +200,17 @@
             // comboCity
             // 
             this.comboCity.FormattingEnabled = true;
-            this.comboCity.Location = new System.Drawing.Point(24, 105);
+            this.comboCity.Location = new System.Drawing.Point(934, 160);
             this.comboCity.Margin = new System.Windows.Forms.Padding(4);
             this.comboCity.Name = "comboCity";
             this.comboCity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboCity.Size = new System.Drawing.Size(120, 24);
+            this.comboCity.Size = new System.Drawing.Size(132, 24);
             this.comboCity.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(672, 165);
+            this.label8.Location = new System.Drawing.Point(456, 58);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 17);
@@ -218,7 +220,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(437, 165);
+            this.label9.Location = new System.Drawing.Point(248, 53);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(27, 17);
@@ -227,23 +229,25 @@
             // 
             // phone
             // 
-            this.phone.Location = new System.Drawing.Point(530, 165);
+            this.phone.Location = new System.Drawing.Point(341, 50);
             this.phone.Margin = new System.Windows.Forms.Padding(4);
             this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(132, 22);
+            this.phone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.phone.Size = new System.Drawing.Size(78, 22);
             this.phone.TabIndex = 20;
             // 
             // mail
             // 
-            this.mail.Location = new System.Drawing.Point(287, 165);
+            this.mail.Location = new System.Drawing.Point(169, 48);
             this.mail.Margin = new System.Windows.Forms.Padding(4);
             this.mail.Name = "mail";
-            this.mail.Size = new System.Drawing.Size(132, 22);
+            this.mail.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.mail.Size = new System.Drawing.Size(61, 22);
             this.mail.TabIndex = 21;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(770, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(1167, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(283, 243);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -253,7 +257,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(672, 206);
+            this.label10.Location = new System.Drawing.Point(1093, 212);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 17);
@@ -262,15 +266,16 @@
             // 
             // pictureLocation
             // 
-            this.pictureLocation.Location = new System.Drawing.Point(354, 206);
+            this.pictureLocation.Location = new System.Drawing.Point(840, 212);
             this.pictureLocation.Margin = new System.Windows.Forms.Padding(4);
             this.pictureLocation.Name = "pictureLocation";
-            this.pictureLocation.Size = new System.Drawing.Size(308, 22);
+            this.pictureLocation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pictureLocation.Size = new System.Drawing.Size(226, 22);
             this.pictureLocation.TabIndex = 24;
             // 
             // buttonBrowse
             // 
-            this.buttonBrowse.Location = new System.Drawing.Point(272, 206);
+            this.buttonBrowse.Location = new System.Drawing.Point(741, 212);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
             this.buttonBrowse.TabIndex = 25;
@@ -303,63 +308,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1074, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(1458, 431);
             this.dataGridView1.TabIndex = 26;
-            // 
-            // tblElementsBindingSource
-            // 
-            this.tblElementsBindingSource.DataMember = "tblElements";
-            this.tblElementsBindingSource.DataSource = this.dataSetElements;
-            // 
-            // dataSetElements
-            // 
-            this.dataSetElements.DataSetName = "DataSetElements";
-            this.dataSetElements.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(163, 156);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 17);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "משקל אטומי";
-            // 
-            // userPassword
-            // 
-            this.userPassword.Location = new System.Drawing.Point(13, 156);
-            this.userPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.userPassword.Name = "userPassword";
-            this.userPassword.Size = new System.Drawing.Size(143, 22);
-            this.userPassword.TabIndex = 29;
-            // 
-            // tblElementsTableAdapter
-            // 
-            this.tblElementsTableAdapter.ClearBeforeFill = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(177, 211);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 17);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "רמות אנרגייה";
-            // 
-            // energyLevels
-            // 
-            this.energyLevels.Location = new System.Drawing.Point(39, 211);
-            this.energyLevels.Name = "energyLevels";
-            this.energyLevels.Size = new System.Drawing.Size(117, 22);
-            this.energyLevels.TabIndex = 31;
-            // 
-            // enName
-            // 
-            this.enName.Location = new System.Drawing.Point(533, 100);
-            this.enName.Name = "enName";
-            this.enName.Size = new System.Drawing.Size(129, 22);
-            this.enName.TabIndex = 32;
             // 
             // elemSymbolDataGridViewTextBoxColumn
             // 
@@ -427,11 +377,81 @@
             this.elemPictureDataGridViewTextBoxColumn.HeaderText = "תמונה";
             this.elemPictureDataGridViewTextBoxColumn.Name = "elemPictureDataGridViewTextBoxColumn";
             // 
+            // tblElementsBindingSource
+            // 
+            this.tblElementsBindingSource.DataMember = "tblElements";
+            this.tblElementsBindingSource.DataSource = this.dataSetElements;
+            // 
+            // dataSetElements
+            // 
+            this.dataSetElements.DataSetName = "DataSetElements";
+            this.dataSetElements.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(738, 165);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 17);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "משקל אטומי";
+            // 
+            // userPassword
+            // 
+            this.userPassword.Location = new System.Drawing.Point(565, 162);
+            this.userPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.userPassword.Name = "userPassword";
+            this.userPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.userPassword.Size = new System.Drawing.Size(143, 22);
+            this.userPassword.TabIndex = 29;
+            // 
+            // tblElementsTableAdapter
+            // 
+            this.tblElementsTableAdapter.ClearBeforeFill = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(456, 160);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 17);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "רמות אנרגייה";
+            // 
+            // energyLevels
+            // 
+            this.energyLevels.Location = new System.Drawing.Point(240, 155);
+            this.energyLevels.Name = "energyLevels";
+            this.energyLevels.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.energyLevels.Size = new System.Drawing.Size(179, 22);
+            this.energyLevels.TabIndex = 31;
+            // 
+            // enName
+            // 
+            this.enName.Location = new System.Drawing.Point(565, 102);
+            this.enName.Name = "enName";
+            this.enName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.enName.Size = new System.Drawing.Size(143, 22);
+            this.enName.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(704, 287);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 20);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "יסודות";
+            // 
             // FormAddElements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 552);
+            this.BackColor = System.Drawing.Color.PaleGreen;
+            this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.enName);
             this.Controls.Add(this.energyLevels);
             this.Controls.Add(this.label12);
@@ -461,7 +481,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAddElements";
-            this.Text = "FormAddStudent";
+            this.Text = "FormAddElements";
             this.Load += new System.EventHandler(this.FormAddStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -516,6 +536,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn elemAtomicWeightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn elemEnergyLevelsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn elemPictureDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label13;
     }
 }
 
