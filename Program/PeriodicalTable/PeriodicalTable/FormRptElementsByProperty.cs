@@ -32,7 +32,12 @@ namespace PeriodicalTable
             string[] cols = strCols.Split(',');
             foreach (string col in cols)
             {
-                listView.Columns.Add(col, this.listView.Width / (cols.Length+1), HorizontalAlignment.Left);
+                int width;
+                if (this.listView.Width / (cols.Length + 1) < 100)
+                    width = 100;
+                else
+                    width = this.listView.Width / (cols.Length + 1);
+                listView.Columns.Add(col, width, HorizontalAlignment.Left);
             }
         }
 

@@ -63,14 +63,14 @@
             this.listView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.listView.RightToLeftLayout = true;
             this.listView.ShowItemToolTips = true;
-            this.listView.Size = new System.Drawing.Size(1158, 489);
+            this.listView.Size = new System.Drawing.Size(1458, 598);
             this.listView.TabIndex = 4;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(12, 91);
+            this.clearBtn.Location = new System.Drawing.Point(94, 88);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(76, 44);
             this.clearBtn.TabIndex = 6;
@@ -80,7 +80,7 @@
             // 
             // colorBtn
             // 
-            this.colorBtn.Location = new System.Drawing.Point(114, 91);
+            this.colorBtn.Location = new System.Drawing.Point(176, 88);
             this.colorBtn.Name = "colorBtn";
             this.colorBtn.Size = new System.Drawing.Size(75, 44);
             this.colorBtn.TabIndex = 7;
@@ -91,10 +91,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(434, 21);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(513, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 25);
+            this.label3.Size = new System.Drawing.Size(297, 31);
             this.label3.TabIndex = 8;
             this.label3.Text = "דוח יסודות לפי קטגוריה";
             // 
@@ -113,7 +113,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.BackColor = System.Drawing.Color.LightPink;
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.colorBtn);
             this.Controls.Add(this.clearBtn);
