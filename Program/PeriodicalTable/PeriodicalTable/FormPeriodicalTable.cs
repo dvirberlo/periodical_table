@@ -105,11 +105,11 @@ namespace PeriodicalTable
             if (this.Width / cols >= this.Height / rows)
             {
                 startX = ((this.Width / cols - this.Height / rows) * cols) / 2;
-                startY = 20;
+                startY = 15;
             }
             else
             {
-                startX = 20;
+                startX = 15;
                 startY = ((this.Height / rows - this.Width / cols) * rows) / 2;
             }
             int width = this.Width - 2 * startX, height = this.Height - 2 * startY;
@@ -120,7 +120,7 @@ namespace PeriodicalTable
             int lblIndex = 0;
             for (int row = 1; row <= rows; row++, lblIndex++)
             {
-                int x = startX + ((0) * (btnSizeX + marginX)) - 20;
+                int x = startX + ((0) * (btnSizeX + marginX)) - 15;
                 int y = startY + ((row - 1) * (btnSizeY + marginY));
                 String rowS = row.ToString();
                 if (row >= 9) rowS = (row - 3).ToString();
@@ -129,7 +129,7 @@ namespace PeriodicalTable
             for (int col = 1; col <= cols; col++, lblIndex++)
             {
                 int x = startX + ((col - 1) * (btnSizeX + marginX));
-                int y = startY + ((0) * (btnSizeY + marginY)) - 20;
+                int y = startY + ((0) * (btnSizeY + marginY)) - 15;
                 lblArr[lblIndex] = CreateLabel(x, y, btnSizeX, btnSizeY, col.ToString(), ContentAlignment.TopCenter);
             }
             // elements
