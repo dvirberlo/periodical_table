@@ -55,6 +55,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn elemAtomicWeightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn elemEnergyLevelsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn elemPictureDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label13;
     }
 }
 

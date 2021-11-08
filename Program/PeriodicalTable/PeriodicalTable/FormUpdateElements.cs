@@ -206,6 +206,17 @@ namespace PeriodicalTable
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.elemSymbolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemEnNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemHeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemRowDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemColumnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemAtomicWeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemEnergyLevelsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elemPictureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblElementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetElements = new PeriodicalTable.DataSetElements();
             this.buttonPrev = new System.Windows.Forms.Button();
@@ -227,17 +238,7 @@ namespace PeriodicalTable
             this.energyLevels = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tblElementsTableAdapter = new PeriodicalTable.DataSetElementsTableAdapters.tblElementsTableAdapter();
-            this.elemSymbolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemEnNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemHeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemRowDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemColumnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemAtomicWeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemEnergyLevelsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elemPictureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblElementsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetElements)).BeginInit();
@@ -247,7 +248,7 @@ namespace PeriodicalTable
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(899, 99);
+            this.label1.Location = new System.Drawing.Point(974, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 17);
             this.label1.TabIndex = 1;
@@ -256,15 +257,16 @@ namespace PeriodicalTable
             // symbol
             // 
             this.symbol.Enabled = false;
-            this.symbol.Location = new System.Drawing.Point(793, 99);
+            this.symbol.Location = new System.Drawing.Point(868, 96);
             this.symbol.Name = "symbol";
+            this.symbol.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.symbol.Size = new System.Drawing.Size(100, 22);
             this.symbol.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(677, 102);
+            this.label2.Location = new System.Drawing.Point(752, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 3;
@@ -272,7 +274,7 @@ namespace PeriodicalTable
             // 
             // id
             // 
-            this.id.Location = new System.Drawing.Point(571, 101);
+            this.id.Location = new System.Drawing.Point(646, 98);
             this.id.Name = "id";
             this.id.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.id.Size = new System.Drawing.Size(100, 22);
@@ -281,7 +283,7 @@ namespace PeriodicalTable
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(471, 102);
+            this.label3.Location = new System.Drawing.Point(546, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 5;
@@ -289,7 +291,7 @@ namespace PeriodicalTable
             // 
             // fullName
             // 
-            this.fullName.Location = new System.Drawing.Point(353, 101);
+            this.fullName.Location = new System.Drawing.Point(428, 98);
             this.fullName.Name = "fullName";
             this.fullName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.fullName.Size = new System.Drawing.Size(100, 22);
@@ -298,7 +300,7 @@ namespace PeriodicalTable
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(250, 99);
+            this.label4.Location = new System.Drawing.Point(325, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 17);
             this.label4.TabIndex = 7;
@@ -307,7 +309,7 @@ namespace PeriodicalTable
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(899, 151);
+            this.label5.Location = new System.Drawing.Point(974, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 17);
             this.label5.TabIndex = 9;
@@ -315,7 +317,7 @@ namespace PeriodicalTable
             // 
             // enName
             // 
-            this.enName.Location = new System.Drawing.Point(748, 151);
+            this.enName.Location = new System.Drawing.Point(823, 148);
             this.enName.Name = "enName";
             this.enName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.enName.Size = new System.Drawing.Size(145, 22);
@@ -324,7 +326,7 @@ namespace PeriodicalTable
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(677, 154);
+            this.label6.Location = new System.Drawing.Point(752, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 17);
             this.label6.TabIndex = 11;
@@ -333,7 +335,7 @@ namespace PeriodicalTable
             // comboGroup
             // 
             this.comboGroup.FormattingEnabled = true;
-            this.comboGroup.Location = new System.Drawing.Point(550, 149);
+            this.comboGroup.Location = new System.Drawing.Point(625, 146);
             this.comboGroup.Name = "comboGroup";
             this.comboGroup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboGroup.Size = new System.Drawing.Size(121, 24);
@@ -341,7 +343,7 @@ namespace PeriodicalTable
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(410, 315);
+            this.buttonUpdate.Location = new System.Drawing.Point(572, 317);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(110, 52);
             this.buttonUpdate.TabIndex = 7;
@@ -352,10 +354,10 @@ namespace PeriodicalTable
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(486, 29);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.Location = new System.Drawing.Point(630, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(215, 32);
+            this.label7.Size = new System.Drawing.Size(207, 31);
             this.label7.TabIndex = 14;
             this.label7.Text = "עדכון פרטי יסוד";
             // 
@@ -381,179 +383,9 @@ namespace PeriodicalTable
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1128, 242);
+            this.dataGridView1.Size = new System.Drawing.Size(1458, 359);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // tblElementsBindingSource
-            // 
-            this.tblElementsBindingSource.DataMember = "tblElements";
-            this.tblElementsBindingSource.DataSource = this.dataSetElements;
-            // 
-            // dataSetElements
-            // 
-            this.dataSetElements.DataSetName = "DataSetElements";
-            this.dataSetElements.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // buttonPrev
-            // 
-            this.buttonPrev.Enabled = false;
-            this.buttonPrev.Location = new System.Drawing.Point(246, 247);
-            this.buttonPrev.Name = "buttonPrev";
-            this.buttonPrev.Size = new System.Drawing.Size(83, 41);
-            this.buttonPrev.TabIndex = 16;
-            this.buttonPrev.Text = "הקודם";
-            this.buttonPrev.UseVisualStyleBackColor = true;
-            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
-            // 
-            // buttonNext
-            // 
-            this.buttonNext.Enabled = false;
-            this.buttonNext.Location = new System.Drawing.Point(474, 247);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(83, 41);
-            this.buttonNext.TabIndex = 17;
-            this.buttonNext.Text = "הבא";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // buttonLast
-            // 
-            this.buttonLast.Location = new System.Drawing.Point(353, 247);
-            this.buttonLast.Name = "buttonLast";
-            this.buttonLast.Size = new System.Drawing.Size(81, 41);
-            this.buttonLast.TabIndex = 18;
-            this.buttonLast.Text = "אחרון";
-            this.buttonLast.UseVisualStyleBackColor = true;
-            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
-            // 
-            // buttonFirst
-            // 
-            this.buttonFirst.Location = new System.Drawing.Point(571, 247);
-            this.buttonFirst.Name = "buttonFirst";
-            this.buttonFirst.Size = new System.Drawing.Size(80, 41);
-            this.buttonFirst.TabIndex = 19;
-            this.buttonFirst.Text = "ראשון";
-            this.buttonFirst.UseVisualStyleBackColor = true;
-            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(471, 152);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 17);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "שם עברי";
-            // 
-            // heName
-            // 
-            this.heName.Location = new System.Drawing.Point(353, 151);
-            this.heName.Name = "heName";
-            this.heName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.heName.Size = new System.Drawing.Size(100, 22);
-            this.heName.TabIndex = 21;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(294, 152);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 17);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "שורה";
-            // 
-            // row
-            // 
-            this.row.Location = new System.Drawing.Point(179, 151);
-            this.row.Name = "row";
-            this.row.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.row.Size = new System.Drawing.Size(100, 22);
-            this.row.TabIndex = 23;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(996, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(421, 355);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(899, 207);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 17);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "תמונה";
-            // 
-            // pictureLocation
-            // 
-            this.pictureLocation.Location = new System.Drawing.Point(535, 202);
-            this.pictureLocation.Name = "pictureLocation";
-            this.pictureLocation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.pictureLocation.Size = new System.Drawing.Size(349, 22);
-            this.pictureLocation.TabIndex = 27;
-            // 
-            // buttonBrowse
-            // 
-            this.buttonBrowse.Location = new System.Drawing.Point(445, 201);
-            this.buttonBrowse.Name = "buttonBrowse";
-            this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
-            this.buttonBrowse.TabIndex = 28;
-            this.buttonBrowse.Text = " . . . עיון";
-            this.buttonBrowse.UseVisualStyleBackColor = true;
-            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
-            // 
-            // col
-            // 
-            this.col.Location = new System.Drawing.Point(300, 198);
-            this.col.Name = "col";
-            this.col.Size = new System.Drawing.Size(101, 22);
-            this.col.TabIndex = 29;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(407, 201);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 17);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "טור";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(187, 201);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 17);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "רמות אנרגיה";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // atomicWeight
-            // 
-            this.atomicWeight.Location = new System.Drawing.Point(102, 93);
-            this.atomicWeight.Name = "atomicWeight";
-            this.atomicWeight.Size = new System.Drawing.Size(123, 22);
-            this.atomicWeight.TabIndex = 33;
-            // 
-            // energyLevels
-            // 
-            this.energyLevels.Location = new System.Drawing.Point(49, 202);
-            this.energyLevels.Name = "energyLevels";
-            this.energyLevels.Size = new System.Drawing.Size(117, 22);
-            this.energyLevels.TabIndex = 34;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // tblElementsTableAdapter
-            // 
-            this.tblElementsTableAdapter.ClearBeforeFill = true;
             // 
             // elemSymbolDataGridViewTextBoxColumn
             // 
@@ -621,11 +453,196 @@ namespace PeriodicalTable
             this.elemPictureDataGridViewTextBoxColumn.HeaderText = "תמונה";
             this.elemPictureDataGridViewTextBoxColumn.Name = "elemPictureDataGridViewTextBoxColumn";
             // 
+            // tblElementsBindingSource
+            // 
+            this.tblElementsBindingSource.DataMember = "tblElements";
+            this.tblElementsBindingSource.DataSource = this.dataSetElements;
+            // 
+            // dataSetElements
+            // 
+            this.dataSetElements.DataSetName = "DataSetElements";
+            this.dataSetElements.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // buttonPrev
+            // 
+            this.buttonPrev.Enabled = false;
+            this.buttonPrev.Location = new System.Drawing.Point(408, 249);
+            this.buttonPrev.Name = "buttonPrev";
+            this.buttonPrev.Size = new System.Drawing.Size(83, 41);
+            this.buttonPrev.TabIndex = 16;
+            this.buttonPrev.Text = "הקודם";
+            this.buttonPrev.UseVisualStyleBackColor = true;
+            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.Enabled = false;
+            this.buttonNext.Location = new System.Drawing.Point(636, 249);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(83, 41);
+            this.buttonNext.TabIndex = 17;
+            this.buttonNext.Text = "הבא";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonLast
+            // 
+            this.buttonLast.Location = new System.Drawing.Point(515, 249);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(81, 41);
+            this.buttonLast.TabIndex = 18;
+            this.buttonLast.Text = "אחרון";
+            this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.Location = new System.Drawing.Point(733, 249);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(80, 41);
+            this.buttonFirst.TabIndex = 19;
+            this.buttonFirst.Text = "ראשון";
+            this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(546, 149);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 17);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "שם עברי";
+            // 
+            // heName
+            // 
+            this.heName.Location = new System.Drawing.Point(428, 148);
+            this.heName.Name = "heName";
+            this.heName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.heName.Size = new System.Drawing.Size(100, 22);
+            this.heName.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(369, 149);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 17);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "שורה";
+            // 
+            // row
+            // 
+            this.row.Location = new System.Drawing.Point(254, 148);
+            this.row.Name = "row";
+            this.row.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.row.Size = new System.Drawing.Size(100, 22);
+            this.row.TabIndex = 23;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(1044, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(421, 355);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(974, 204);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 17);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "תמונה";
+            // 
+            // pictureLocation
+            // 
+            this.pictureLocation.Location = new System.Drawing.Point(610, 199);
+            this.pictureLocation.Name = "pictureLocation";
+            this.pictureLocation.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pictureLocation.Size = new System.Drawing.Size(349, 22);
+            this.pictureLocation.TabIndex = 27;
+            // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.Location = new System.Drawing.Point(520, 198);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(75, 23);
+            this.buttonBrowse.TabIndex = 28;
+            this.buttonBrowse.Text = " . . . עיון";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
+            // 
+            // col
+            // 
+            this.col.Location = new System.Drawing.Point(375, 195);
+            this.col.Name = "col";
+            this.col.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.col.Size = new System.Drawing.Size(101, 22);
+            this.col.TabIndex = 29;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(482, 198);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(27, 17);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "טור";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(262, 198);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(77, 17);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "רמות אנרגיה";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // atomicWeight
+            // 
+            this.atomicWeight.Location = new System.Drawing.Point(177, 90);
+            this.atomicWeight.Name = "atomicWeight";
+            this.atomicWeight.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.atomicWeight.Size = new System.Drawing.Size(123, 22);
+            this.atomicWeight.TabIndex = 33;
+            // 
+            // energyLevels
+            // 
+            this.energyLevels.Location = new System.Drawing.Point(124, 199);
+            this.energyLevels.Name = "energyLevels";
+            this.energyLevels.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.energyLevels.Size = new System.Drawing.Size(117, 22);
+            this.energyLevels.TabIndex = 34;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // tblElementsTableAdapter
+            // 
+            this.tblElementsTableAdapter.ClearBeforeFill = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(764, 359);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 20);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "יסודות";
+            // 
             // FormUpdateElements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1429, 651);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.energyLevels);
             this.Controls.Add(this.atomicWeight);
             this.Controls.Add(this.label12);
@@ -658,7 +675,7 @@ namespace PeriodicalTable
             this.Controls.Add(this.symbol);
             this.Controls.Add(this.label1);
             this.Name = "FormUpdateElements";
-            this.Text = "Form Update Elements";
+            this.Text = "FormUpdateElements";
             this.Load += new System.EventHandler(this.FormUpdateStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblElementsBindingSource)).EndInit();

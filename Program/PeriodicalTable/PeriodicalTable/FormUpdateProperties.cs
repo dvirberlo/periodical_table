@@ -172,26 +172,25 @@ namespace PeriodicalTable
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.propertyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.propertyCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblPropertiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetProperties = new PeriodicalTable.DataSetProperties();
             this.buttonPrev = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonLast = new System.Windows.Forms.Button();
             this.buttonFirst = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tblPropertiesTableAdapter = new PeriodicalTable.DataSetPropertiesTableAdapters.tblPropertiesTableAdapter();
-            this.propertyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.propertyCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPropertiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(899, 99);
+            this.label1.Location = new System.Drawing.Point(856, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 17);
             this.label1.TabIndex = 1;
@@ -200,7 +199,7 @@ namespace PeriodicalTable
             // propName
             // 
             this.propName.Enabled = false;
-            this.propName.Location = new System.Drawing.Point(793, 99);
+            this.propName.Location = new System.Drawing.Point(750, 103);
             this.propName.Name = "propName";
             this.propName.Size = new System.Drawing.Size(100, 22);
             this.propName.TabIndex = 1;
@@ -208,7 +207,7 @@ namespace PeriodicalTable
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(721, 99);
+            this.label6.Location = new System.Drawing.Point(678, 103);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 17);
             this.label6.TabIndex = 11;
@@ -217,7 +216,7 @@ namespace PeriodicalTable
             // comboCat
             // 
             this.comboCat.FormattingEnabled = true;
-            this.comboCat.Location = new System.Drawing.Point(571, 99);
+            this.comboCat.Location = new System.Drawing.Point(528, 103);
             this.comboCat.Name = "comboCat";
             this.comboCat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboCat.Size = new System.Drawing.Size(121, 24);
@@ -225,7 +224,7 @@ namespace PeriodicalTable
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(410, 315);
+            this.buttonUpdate.Location = new System.Drawing.Point(681, 266);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(110, 52);
             this.buttonUpdate.TabIndex = 7;
@@ -236,10 +235,10 @@ namespace PeriodicalTable
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(486, 29);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.Location = new System.Drawing.Point(608, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(234, 32);
+            this.label7.Size = new System.Drawing.Size(224, 31);
             this.label7.TabIndex = 14;
             this.label7.Text = "עדכון פרטי תכונה";
             // 
@@ -256,9 +255,21 @@ namespace PeriodicalTable
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1128, 242);
+            this.dataGridView1.Size = new System.Drawing.Size(1458, 359);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // propertyNameDataGridViewTextBoxColumn
+            // 
+            this.propertyNameDataGridViewTextBoxColumn.DataPropertyName = "propertyName";
+            this.propertyNameDataGridViewTextBoxColumn.HeaderText = "שם";
+            this.propertyNameDataGridViewTextBoxColumn.Name = "propertyNameDataGridViewTextBoxColumn";
+            // 
+            // propertyCategoryDataGridViewTextBoxColumn
+            // 
+            this.propertyCategoryDataGridViewTextBoxColumn.DataPropertyName = "propertyCategory";
+            this.propertyCategoryDataGridViewTextBoxColumn.HeaderText = "קטגוריה";
+            this.propertyCategoryDataGridViewTextBoxColumn.Name = "propertyCategoryDataGridViewTextBoxColumn";
             // 
             // tblPropertiesBindingSource
             // 
@@ -273,7 +284,7 @@ namespace PeriodicalTable
             // buttonPrev
             // 
             this.buttonPrev.Enabled = false;
-            this.buttonPrev.Location = new System.Drawing.Point(246, 247);
+            this.buttonPrev.Location = new System.Drawing.Point(517, 198);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(83, 41);
             this.buttonPrev.TabIndex = 16;
@@ -284,7 +295,7 @@ namespace PeriodicalTable
             // buttonNext
             // 
             this.buttonNext.Enabled = false;
-            this.buttonNext.Location = new System.Drawing.Point(474, 247);
+            this.buttonNext.Location = new System.Drawing.Point(745, 198);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(83, 41);
             this.buttonNext.TabIndex = 17;
@@ -294,7 +305,7 @@ namespace PeriodicalTable
             // 
             // buttonLast
             // 
-            this.buttonLast.Location = new System.Drawing.Point(353, 247);
+            this.buttonLast.Location = new System.Drawing.Point(624, 198);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(81, 41);
             this.buttonLast.TabIndex = 18;
@@ -304,7 +315,7 @@ namespace PeriodicalTable
             // 
             // buttonFirst
             // 
-            this.buttonFirst.Location = new System.Drawing.Point(571, 247);
+            this.buttonFirst.Location = new System.Drawing.Point(842, 198);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(80, 41);
             this.buttonFirst.TabIndex = 19;
@@ -312,37 +323,27 @@ namespace PeriodicalTable
             this.buttonFirst.UseVisualStyleBackColor = true;
             this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(996, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(421, 355);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            // 
             // tblPropertiesTableAdapter
             // 
             this.tblPropertiesTableAdapter.ClearBeforeFill = true;
             // 
-            // propertyNameDataGridViewTextBoxColumn
+            // label2
             // 
-            this.propertyNameDataGridViewTextBoxColumn.DataPropertyName = "propertyName";
-            this.propertyNameDataGridViewTextBoxColumn.HeaderText = "שם";
-            this.propertyNameDataGridViewTextBoxColumn.Name = "propertyNameDataGridViewTextBoxColumn";
-            // 
-            // propertyCategoryDataGridViewTextBoxColumn
-            // 
-            this.propertyCategoryDataGridViewTextBoxColumn.DataPropertyName = "propertyCategory";
-            this.propertyCategoryDataGridViewTextBoxColumn.HeaderText = "קטגוריה";
-            this.propertyCategoryDataGridViewTextBoxColumn.Name = "propertyCategoryDataGridViewTextBoxColumn";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(694, 359);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "קטוגוריות";
             // 
             // FormUpdateProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1429, 651);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonFirst);
             this.Controls.Add(this.buttonLast);
             this.Controls.Add(this.buttonNext);
@@ -355,12 +356,11 @@ namespace PeriodicalTable
             this.Controls.Add(this.propName);
             this.Controls.Add(this.label1);
             this.Name = "FormUpdateProperties";
-            this.Text = "Form Update Properties";
+            this.Text = "FormUpdateUsers";
             this.Load += new System.EventHandler(this.FormUpdateStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPropertiesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

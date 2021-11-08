@@ -20,6 +20,7 @@
         private System.Windows.Forms.Button pickColor;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupColorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label3;
 
         #region Windows Form Designer generated code
 

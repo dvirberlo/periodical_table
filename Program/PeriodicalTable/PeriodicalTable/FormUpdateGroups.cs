@@ -152,6 +152,8 @@ namespace PeriodicalTable
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupColorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetGroups = new PeriodicalTable.DataSetGroups();
             this.buttonPrev = new System.Windows.Forms.Button();
@@ -160,8 +162,7 @@ namespace PeriodicalTable
             this.buttonFirst = new System.Windows.Forms.Button();
             this.tblGroupsTableAdapter = new PeriodicalTable.DataSetGroupsTableAdapters.tblGroupsTableAdapter();
             this.pickColor = new System.Windows.Forms.Button();
-            this.groupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupColorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGroupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetGroups)).BeginInit();
@@ -203,7 +204,7 @@ namespace PeriodicalTable
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(410, 315);
+            this.buttonUpdate.Location = new System.Drawing.Point(686, 295);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(110, 52);
             this.buttonUpdate.TabIndex = 7;
@@ -214,10 +215,10 @@ namespace PeriodicalTable
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(486, 29);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.Location = new System.Drawing.Point(612, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(239, 32);
+            this.label7.Size = new System.Drawing.Size(230, 31);
             this.label7.TabIndex = 14;
             this.label7.Text = "עדכון פרטי קבוצה";
             // 
@@ -234,9 +235,21 @@ namespace PeriodicalTable
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1128, 242);
+            this.dataGridView1.Size = new System.Drawing.Size(1458, 359);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // groupNameDataGridViewTextBoxColumn
+            // 
+            this.groupNameDataGridViewTextBoxColumn.DataPropertyName = "groupName";
+            this.groupNameDataGridViewTextBoxColumn.HeaderText = "שם";
+            this.groupNameDataGridViewTextBoxColumn.Name = "groupNameDataGridViewTextBoxColumn";
+            // 
+            // groupColorDataGridViewTextBoxColumn
+            // 
+            this.groupColorDataGridViewTextBoxColumn.DataPropertyName = "groupColor";
+            this.groupColorDataGridViewTextBoxColumn.HeaderText = "צבע";
+            this.groupColorDataGridViewTextBoxColumn.Name = "groupColorDataGridViewTextBoxColumn";
             // 
             // tblGroupsBindingSource
             // 
@@ -251,7 +264,7 @@ namespace PeriodicalTable
             // buttonPrev
             // 
             this.buttonPrev.Enabled = false;
-            this.buttonPrev.Location = new System.Drawing.Point(246, 247);
+            this.buttonPrev.Location = new System.Drawing.Point(522, 227);
             this.buttonPrev.Name = "buttonPrev";
             this.buttonPrev.Size = new System.Drawing.Size(83, 41);
             this.buttonPrev.TabIndex = 16;
@@ -262,7 +275,7 @@ namespace PeriodicalTable
             // buttonNext
             // 
             this.buttonNext.Enabled = false;
-            this.buttonNext.Location = new System.Drawing.Point(474, 247);
+            this.buttonNext.Location = new System.Drawing.Point(750, 227);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(83, 41);
             this.buttonNext.TabIndex = 17;
@@ -272,7 +285,7 @@ namespace PeriodicalTable
             // 
             // buttonLast
             // 
-            this.buttonLast.Location = new System.Drawing.Point(353, 247);
+            this.buttonLast.Location = new System.Drawing.Point(629, 227);
             this.buttonLast.Name = "buttonLast";
             this.buttonLast.Size = new System.Drawing.Size(81, 41);
             this.buttonLast.TabIndex = 18;
@@ -282,7 +295,7 @@ namespace PeriodicalTable
             // 
             // buttonFirst
             // 
-            this.buttonFirst.Location = new System.Drawing.Point(571, 247);
+            this.buttonFirst.Location = new System.Drawing.Point(847, 227);
             this.buttonFirst.Name = "buttonFirst";
             this.buttonFirst.Size = new System.Drawing.Size(80, 41);
             this.buttonFirst.TabIndex = 19;
@@ -304,23 +317,23 @@ namespace PeriodicalTable
             this.pickColor.UseVisualStyleBackColor = true;
             this.pickColor.Click += new System.EventHandler(this.PickColorClick);
             // 
-            // groupNameDataGridViewTextBoxColumn
+            // label3
             // 
-            this.groupNameDataGridViewTextBoxColumn.DataPropertyName = "groupName";
-            this.groupNameDataGridViewTextBoxColumn.HeaderText = "שם";
-            this.groupNameDataGridViewTextBoxColumn.Name = "groupNameDataGridViewTextBoxColumn";
-            // 
-            // groupColorDataGridViewTextBoxColumn
-            // 
-            this.groupColorDataGridViewTextBoxColumn.DataPropertyName = "groupColor";
-            this.groupColorDataGridViewTextBoxColumn.HeaderText = "צבע";
-            this.groupColorDataGridViewTextBoxColumn.Name = "groupColorDataGridViewTextBoxColumn";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(716, 359);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "קבוצות";
             // 
             // FormUpdateGroups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1429, 651);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(1482, 753);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pickColor);
             this.Controls.Add(this.buttonFirst);
             this.Controls.Add(this.buttonLast);
@@ -334,7 +347,7 @@ namespace PeriodicalTable
             this.Controls.Add(this.userID);
             this.Controls.Add(this.label1);
             this.Name = "FormUpdateGroups";
-            this.Text = "Form Update Groups";
+            this.Text = "FormUpdateGroups";
             this.Load += new System.EventHandler(this.FormUpdateStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblGroupsBindingSource)).EndInit();
