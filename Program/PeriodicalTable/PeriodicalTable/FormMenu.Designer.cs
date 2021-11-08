@@ -78,7 +78,8 @@
             this.chartsToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(800, 28);
+            this.mainMenu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.mainMenu.Size = new System.Drawing.Size(1482, 28);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -93,56 +94,56 @@
             this.usersToolStripMenuItem,
             this.categoriesToolStripMenuItem});
             this.tableToolStripMenuItem.Name = "tableToolStripMenuItem";
-            this.tableToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.tableToolStripMenuItem.Text = "&Tables";
+            this.tableToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.tableToolStripMenuItem.Text = "טבלאות";
             // 
             // citiesToolStripMenuItem
             // 
             this.citiesToolStripMenuItem.Name = "citiesToolStripMenuItem";
-            this.citiesToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.citiesToolStripMenuItem.Text = "Cities";
+            this.citiesToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.citiesToolStripMenuItem.Text = "ערים";
             this.citiesToolStripMenuItem.Click += new System.EventHandler(this.CitiesClick);
             // 
             // elementsToolStripMenuItem
             // 
             this.elementsToolStripMenuItem.Name = "elementsToolStripMenuItem";
-            this.elementsToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.elementsToolStripMenuItem.Text = "Elements";
+            this.elementsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.elementsToolStripMenuItem.Text = "יסודות";
             this.elementsToolStripMenuItem.Click += new System.EventHandler(this.ElementsClick);
             // 
             // groupsToolStripMenuItem
             // 
             this.groupsToolStripMenuItem.Name = "groupsToolStripMenuItem";
-            this.groupsToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.groupsToolStripMenuItem.Text = "Groups";
+            this.groupsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.groupsToolStripMenuItem.Text = "קבוצות";
             this.groupsToolStripMenuItem.Click += new System.EventHandler(this.GroupsClick);
             // 
             // propertiesToolStripMenuItem
             // 
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.propertiesToolStripMenuItem.Text = "Properties";
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.propertiesToolStripMenuItem.Text = "תכונות";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.PropertiesClick);
             // 
             // propertiesInElementToolStripMenuItem
             // 
             this.propertiesInElementToolStripMenuItem.Name = "propertiesInElementToolStripMenuItem";
-            this.propertiesInElementToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.propertiesInElementToolStripMenuItem.Text = "PropertiesInElement";
+            this.propertiesInElementToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.propertiesInElementToolStripMenuItem.Text = "תכונות ביסוד";
             this.propertiesInElementToolStripMenuItem.Click += new System.EventHandler(this.PropertiesInElementClick);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.usersToolStripMenuItem.Text = "משתמשים";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.UsersClick);
             // 
             // categoriesToolStripMenuItem
             // 
             this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
-            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
-            this.categoriesToolStripMenuItem.Text = "C&ategories";
+            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.categoriesToolStripMenuItem.Text = "קטגוריות";
             this.categoriesToolStripMenuItem.Click += new System.EventHandler(this.TblCategoriesClick);
             // 
             // addToolStripMenuItem
@@ -156,56 +157,56 @@
             this.addPropertiesInElementToolStripMenuItem,
             this.addCategoriesToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.addToolStripMenuItem.Text = "&Add ";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.addToolStripMenuItem.Text = "הוספה";
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
-            this.addUserToolStripMenuItem.Text = "Add &User";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.addUserToolStripMenuItem.Text = "משתמשים";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.AddUsersClick);
             // 
             // addCitiesToolStripMenuItem
             // 
             this.addCitiesToolStripMenuItem.Name = "addCitiesToolStripMenuItem";
-            this.addCitiesToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
-            this.addCitiesToolStripMenuItem.Text = "Add &Cities";
+            this.addCitiesToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.addCitiesToolStripMenuItem.Text = "ערים";
             this.addCitiesToolStripMenuItem.Click += new System.EventHandler(this.AddCitiesClick);
             // 
             // addElementsToolStripMenuItem
             // 
             this.addElementsToolStripMenuItem.Name = "addElementsToolStripMenuItem";
-            this.addElementsToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
-            this.addElementsToolStripMenuItem.Text = "Add &Elements";
+            this.addElementsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.addElementsToolStripMenuItem.Text = "יסודות";
             this.addElementsToolStripMenuItem.Click += new System.EventHandler(this.AddElementsClick);
             // 
             // addGroupToolStripMenuItem
             // 
             this.addGroupToolStripMenuItem.Name = "addGroupToolStripMenuItem";
-            this.addGroupToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
-            this.addGroupToolStripMenuItem.Text = "Add &Groups";
+            this.addGroupToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.addGroupToolStripMenuItem.Text = "קבוצות";
             this.addGroupToolStripMenuItem.Click += new System.EventHandler(this.AddGroupsClick);
             // 
             // addPropertiesToolStripMenuItem
             // 
             this.addPropertiesToolStripMenuItem.Name = "addPropertiesToolStripMenuItem";
-            this.addPropertiesToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
-            this.addPropertiesToolStripMenuItem.Text = "Add &Properties";
+            this.addPropertiesToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.addPropertiesToolStripMenuItem.Text = "תכונות";
             this.addPropertiesToolStripMenuItem.Click += new System.EventHandler(this.AddPropertiesClick);
             // 
             // addPropertiesInElementToolStripMenuItem
             // 
             this.addPropertiesInElementToolStripMenuItem.Name = "addPropertiesInElementToolStripMenuItem";
-            this.addPropertiesInElementToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
-            this.addPropertiesInElementToolStripMenuItem.Text = "Add Properties In Element";
+            this.addPropertiesInElementToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.addPropertiesInElementToolStripMenuItem.Text = "תכונות ביסוד";
             this.addPropertiesInElementToolStripMenuItem.Click += new System.EventHandler(this.AddPropertiesInElementClick);
             // 
             // addCategoriesToolStripMenuItem
             // 
             this.addCategoriesToolStripMenuItem.Name = "addCategoriesToolStripMenuItem";
-            this.addCategoriesToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
-            this.addCategoriesToolStripMenuItem.Text = "Add C&ategories";
+            this.addCategoriesToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.addCategoriesToolStripMenuItem.Text = "קטגוריות";
             this.addCategoriesToolStripMenuItem.Click += new System.EventHandler(this.AddCategoriesClick);
             // 
             // updateToolStripMenuItem
@@ -216,42 +217,42 @@
             this.udateGroupsToolStripMenuItem,
             this.updatePropertiesToolStripMenuItem});
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.updateToolStripMenuItem.Text = "&Update";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.updateToolStripMenuItem.Text = "עדכון";
             // 
             // updateUsersToolStripMenuItem
             // 
             this.updateUsersToolStripMenuItem.Name = "updateUsersToolStripMenuItem";
-            this.updateUsersToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.updateUsersToolStripMenuItem.Text = "Update &Users";
+            this.updateUsersToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.updateUsersToolStripMenuItem.Text = "משתמשים";
             this.updateUsersToolStripMenuItem.Click += new System.EventHandler(this.UpdateUsersClick);
             // 
             // updateElementsToolStripMenuItem
             // 
             this.updateElementsToolStripMenuItem.Name = "updateElementsToolStripMenuItem";
-            this.updateElementsToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.updateElementsToolStripMenuItem.Text = "Update &Elements";
+            this.updateElementsToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.updateElementsToolStripMenuItem.Text = "יסודות";
             this.updateElementsToolStripMenuItem.Click += new System.EventHandler(this.UpdateElementsClick);
             // 
             // udateGroupsToolStripMenuItem
             // 
             this.udateGroupsToolStripMenuItem.Name = "udateGroupsToolStripMenuItem";
-            this.udateGroupsToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.udateGroupsToolStripMenuItem.Text = "Udate &Groups";
+            this.udateGroupsToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.udateGroupsToolStripMenuItem.Text = "קבוצות";
             this.udateGroupsToolStripMenuItem.Click += new System.EventHandler(this.UpdateGroupsClick);
             // 
             // updatePropertiesToolStripMenuItem
             // 
             this.updatePropertiesToolStripMenuItem.Name = "updatePropertiesToolStripMenuItem";
-            this.updatePropertiesToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
-            this.updatePropertiesToolStripMenuItem.Text = "Update &Properties";
+            this.updatePropertiesToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.updatePropertiesToolStripMenuItem.Text = "תכונות";
             this.updatePropertiesToolStripMenuItem.Click += new System.EventHandler(this.UpdatePropertiesClick);
             // 
             // periodicalTableToolStripMenuItem
             // 
             this.periodicalTableToolStripMenuItem.Name = "periodicalTableToolStripMenuItem";
-            this.periodicalTableToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
-            this.periodicalTableToolStripMenuItem.Text = "&Periodical Table";
+            this.periodicalTableToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.periodicalTableToolStripMenuItem.Text = "הטבלה מחזורית";
             this.periodicalTableToolStripMenuItem.Click += new System.EventHandler(this.PeriodicalTableClick);
             // 
             // reportsToolStripMenuItem
@@ -263,42 +264,42 @@
             this.elementsByPropertyToolStripMenuItem,
             this.elementsByCategoryToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.reportsToolStripMenuItem.Text = "&Reports";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.reportsToolStripMenuItem.Text = "דוחות";
             // 
             // elementsByAtomicNumToolStripMenuItem
             // 
             this.elementsByAtomicNumToolStripMenuItem.Name = "elementsByAtomicNumToolStripMenuItem";
-            this.elementsByAtomicNumToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.elementsByAtomicNumToolStripMenuItem.Text = "Elements By Atomic &Weight";
+            this.elementsByAtomicNumToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.elementsByAtomicNumToolStripMenuItem.Text = "יסודות לפי משקל אטומי";
             this.elementsByAtomicNumToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByAtomicWeight);
             // 
             // elemntsByAtomicNumberToolStripMenuItem
             // 
             this.elemntsByAtomicNumberToolStripMenuItem.Name = "elemntsByAtomicNumberToolStripMenuItem";
-            this.elemntsByAtomicNumberToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.elemntsByAtomicNumberToolStripMenuItem.Text = "Elemnts By Atomic &Number";
+            this.elemntsByAtomicNumberToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.elemntsByAtomicNumberToolStripMenuItem.Text = "יסודות לפי מספר אטומי";
             this.elemntsByAtomicNumberToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByAtomicNum);
             // 
             // elementsByGroupToolStripMenuItem
             // 
             this.elementsByGroupToolStripMenuItem.Name = "elementsByGroupToolStripMenuItem";
-            this.elementsByGroupToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.elementsByGroupToolStripMenuItem.Text = "Elements By &Group";
+            this.elementsByGroupToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.elementsByGroupToolStripMenuItem.Text = "יסודות לפי קבוצה";
             this.elementsByGroupToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByGroup);
             // 
             // elementsByPropertyToolStripMenuItem
             // 
             this.elementsByPropertyToolStripMenuItem.Name = "elementsByPropertyToolStripMenuItem";
-            this.elementsByPropertyToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.elementsByPropertyToolStripMenuItem.Text = "Elements By &Property";
+            this.elementsByPropertyToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.elementsByPropertyToolStripMenuItem.Text = "יסודות לפי תכונה";
             this.elementsByPropertyToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByProperty);
             // 
             // elementsByCategoryToolStripMenuItem
             // 
             this.elementsByCategoryToolStripMenuItem.Name = "elementsByCategoryToolStripMenuItem";
-            this.elementsByCategoryToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.elementsByCategoryToolStripMenuItem.Text = "Elements By &Category";
+            this.elementsByCategoryToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.elementsByCategoryToolStripMenuItem.Text = "יסודות לפי קטגוריה";
             this.elementsByCategoryToolStripMenuItem.Click += new System.EventHandler(this.RptElementsByCategory);
             // 
             // chartsToolStripMenuItem
@@ -310,49 +311,49 @@
             this.elementsByPropertyToolStripMenuItem1,
             this.elementsByCategoryToolStripMenuItem1});
             this.chartsToolStripMenuItem.Name = "chartsToolStripMenuItem";
-            this.chartsToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.chartsToolStripMenuItem.Text = "&Charts";
+            this.chartsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.chartsToolStripMenuItem.Text = "תרשימים";
             // 
             // elementsByAtomicWeightToolStripMenuItem
             // 
             this.elementsByAtomicWeightToolStripMenuItem.Name = "elementsByAtomicWeightToolStripMenuItem";
-            this.elementsByAtomicWeightToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.elementsByAtomicWeightToolStripMenuItem.Text = "Elements By Atomic &Weight";
+            this.elementsByAtomicWeightToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
+            this.elementsByAtomicWeightToolStripMenuItem.Text = "יסודות לפי משקל אטומי";
             this.elementsByAtomicWeightToolStripMenuItem.Click += new System.EventHandler(this.ChartElementsByAtomicWeight);
             // 
             // elementsByAtomicNumToolStripMenuItem1
             // 
             this.elementsByAtomicNumToolStripMenuItem1.Name = "elementsByAtomicNumToolStripMenuItem1";
-            this.elementsByAtomicNumToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
-            this.elementsByAtomicNumToolStripMenuItem1.Text = "Elements By Atomic &Num";
+            this.elementsByAtomicNumToolStripMenuItem1.Size = new System.Drawing.Size(235, 26);
+            this.elementsByAtomicNumToolStripMenuItem1.Text = "יסודות לפי מספר אטומי";
             this.elementsByAtomicNumToolStripMenuItem1.Click += new System.EventHandler(this.ChartElementsByAtomicNum);
             // 
             // elementsByGroupToolStripMenuItem1
             // 
             this.elementsByGroupToolStripMenuItem1.Name = "elementsByGroupToolStripMenuItem1";
-            this.elementsByGroupToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
-            this.elementsByGroupToolStripMenuItem1.Text = "Elements By &Group";
+            this.elementsByGroupToolStripMenuItem1.Size = new System.Drawing.Size(235, 26);
+            this.elementsByGroupToolStripMenuItem1.Text = "יסודות לפי קבוצה";
             this.elementsByGroupToolStripMenuItem1.Click += new System.EventHandler(this.ChartElementsByGroup);
             // 
             // elementsByPropertyToolStripMenuItem1
             // 
             this.elementsByPropertyToolStripMenuItem1.Name = "elementsByPropertyToolStripMenuItem1";
-            this.elementsByPropertyToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
-            this.elementsByPropertyToolStripMenuItem1.Text = "Elements By &Property";
+            this.elementsByPropertyToolStripMenuItem1.Size = new System.Drawing.Size(235, 26);
+            this.elementsByPropertyToolStripMenuItem1.Text = "יסודות לפי תכונה";
             this.elementsByPropertyToolStripMenuItem1.Click += new System.EventHandler(this.ChartElementsByProperty);
             // 
             // elementsByCategoryToolStripMenuItem1
             // 
             this.elementsByCategoryToolStripMenuItem1.Name = "elementsByCategoryToolStripMenuItem1";
-            this.elementsByCategoryToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
-            this.elementsByCategoryToolStripMenuItem1.Text = "Elements By &Category";
+            this.elementsByCategoryToolStripMenuItem1.Size = new System.Drawing.Size(235, 26);
+            this.elementsByCategoryToolStripMenuItem1.Text = "יסודות לפי קטגוריה";
             this.elementsByCategoryToolStripMenuItem1.Click += new System.EventHandler(this.ChartElementsByCategory);
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1482, 753);
             this.Controls.Add(this.mainMenu);
             this.MainMenuStrip = this.mainMenu;
             this.Name = "FormMenu";

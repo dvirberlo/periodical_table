@@ -14,24 +14,21 @@ namespace PeriodicalTable
     public partial class FormMenu : Form
     {
         private OleDbConnection dataConnection;
-        public FormMenu()
+        private bool isManager;
+        public FormMenu(OleDbConnection dataConnection, bool isManager)
         {
+            this.dataConnection = dataConnection;
+            this.isManager = isManager;
             InitializeComponent();
-            OpenDb();
-        }
-        private void OpenDb()
-        {
-            dataConnection = new OleDbConnection();
-            try
+
+            if (!isManager)
             {
-                dataConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Projects_2022\\Project_DvirBerlowitz\\Access\\dbPeriodicalTable.accdb";
-                dataConnection.Open();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error accessing the database: " + e.Message, "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mainMenu.Items[0].Enabled = false;
+                mainMenu.Items[1].Enabled = false;
+                mainMenu.Items[2].Enabled = false;
             }
         }
+
 
         // tables
         private void CitiesClick(object sender, EventArgs e)
