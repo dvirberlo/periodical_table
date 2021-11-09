@@ -15,27 +15,13 @@ namespace PeriodicalTable
     {
         private OleDbConnection dataConnection;
         private bool isManager;
-        public FormLogin()
+        public FormLogin(OleDbConnection dataConnection)
         {
+            this.dataConnection = dataConnection;
             InitializeComponent();
             this.contBtn.Visible = false;
             this.welcomeLbl.Text = "";
             this.pictureBox1.ImageLocation = "";
-            OpenDb();
-        }
-
-        private void OpenDb()
-        {
-            dataConnection = new OleDbConnection();
-            try
-            {
-                dataConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Projects_2022\\Project_DvirBerlowitz\\Access\\dbPeriodicalTable.accdb";
-                dataConnection.Open();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error accessing the database: " + e.Message, "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void CheckButtonClick(object sender, EventArgs e)
