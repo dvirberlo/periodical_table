@@ -45,6 +45,10 @@ namespace PeriodicalTable
 
         private void buttonAdd_Click(object sender, EventArgs e)                   // Add user to table
         {
+            if(!IDValidation.IsValidID(int.Parse(userId.Text))){
+                MessageBox.Show("Please enter valid ID", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 OleDbCommand datacommand = new OleDbCommand();
