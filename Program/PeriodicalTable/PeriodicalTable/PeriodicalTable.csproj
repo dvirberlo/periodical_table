@@ -276,6 +276,7 @@
     <Compile Include="FormUpdateUsers.designer.cs">
       <DependentUpon>FormUpdateUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="IDValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAddCategories.resx">
