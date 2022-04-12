@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="backend\DBManager.cs" />
     <Compile Include="DataSetCategories.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,286 +91,286 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetUsers.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FormAddCategories.cs">
+    <Compile Include="forms\add\FormAddCategories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddCategories.designer.cs">
+    <Compile Include="forms\add\FormAddCategories.designer.cs">
       <DependentUpon>FormAddCategories.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddPropertiesInElement.cs">
+    <Compile Include="forms\add\FormAddPropertiesInElement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddPropertiesInElement.designer.cs">
+    <Compile Include="forms\add\FormAddPropertiesInElement.designer.cs">
       <DependentUpon>FormAddPropertiesInElement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddProperties.cs">
+    <Compile Include="forms\add\FormAddProperties.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddProperties.designer.cs">
+    <Compile Include="forms\add\FormAddProperties.designer.cs">
       <DependentUpon>FormAddProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddGroups.cs">
+    <Compile Include="forms\add\FormAddGroups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddGroups.designer.cs">
+    <Compile Include="forms\add\FormAddGroups.designer.cs">
       <DependentUpon>FormAddGroups.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddCities.cs">
+    <Compile Include="forms\add\FormAddCities.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddCities.designer.cs">
+    <Compile Include="forms\add\FormAddCities.designer.cs">
       <DependentUpon>FormAddCities.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddElements.cs">
+    <Compile Include="forms\add\FormAddElements.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddElements.designer.cs">
+    <Compile Include="forms\add\FormAddElements.designer.cs">
       <DependentUpon>FormAddElements.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddUser.cs">
+    <Compile Include="forms\add\FormAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddUser.designer.cs">
+    <Compile Include="forms\add\FormAddUser.designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChartElementsByCategory.cs">
+    <Compile Include="forms\chart\FormChartElementsByCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChartElementsByCategory.Designer.cs">
+    <Compile Include="forms\chart\FormChartElementsByCategory.Designer.cs">
       <DependentUpon>FormChartElementsByCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChartElementsByProperty.cs">
+    <Compile Include="forms\chart\FormChartElementsByProperty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChartElementsByProperty.Designer.cs">
+    <Compile Include="forms\chart\FormChartElementsByProperty.Designer.cs">
       <DependentUpon>FormChartElementsByProperty.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChartElementsByGroup.cs">
+    <Compile Include="forms\chart\FormChartElementsByGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChartElementsByGroup.Designer.cs">
+    <Compile Include="forms\chart\FormChartElementsByGroup.Designer.cs">
       <DependentUpon>FormChartElementsByGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChartElementsByAtomicNum.cs">
+    <Compile Include="forms\chart\FormChartElementsByAtomicNum.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChartElementsByAtomicNum.Designer.cs">
+    <Compile Include="forms\chart\FormChartElementsByAtomicNum.Designer.cs">
       <DependentUpon>FormChartElementsByAtomicNum.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.designer.cs">
+    <Compile Include="forms\FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenu.cs">
+    <Compile Include="forms\FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMenu.Designer.cs">
+    <Compile Include="forms\FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPeriodicalTable.cs">
+    <Compile Include="forms\FormPeriodicalTable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPeriodicalTable.Designer.cs">
+    <Compile Include="forms\FormPeriodicalTable.Designer.cs">
       <DependentUpon>FormPeriodicalTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChartElementsByAtomicWeight.cs">
+    <Compile Include="forms\chart\FormChartElementsByAtomicWeight.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChartElementsByAtomicWeight.Designer.cs">
+    <Compile Include="forms\chart\FormChartElementsByAtomicWeight.Designer.cs">
       <DependentUpon>FormChartElementsByAtomicWeight.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRptElementsByCategory.cs">
+    <Compile Include="forms\report\FormRptElementsByCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRptElementsByCategory.Designer.cs">
+    <Compile Include="forms\report\FormRptElementsByCategory.Designer.cs">
       <DependentUpon>FormRptElementsByCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRptElementsByProperty.cs">
+    <Compile Include="forms\report\FormRptElementsByProperty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRptElementsByProperty.Designer.cs">
+    <Compile Include="forms\report\FormRptElementsByProperty.Designer.cs">
       <DependentUpon>FormRptElementsByProperty.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRptElementsByGroup.cs">
+    <Compile Include="forms\report\FormRptElementsByGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRptElementsByGroup.Designer.cs">
+    <Compile Include="forms\report\FormRptElementsByGroup.Designer.cs">
       <DependentUpon>FormRptElementsByGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRptElementsByAtomicNum.cs">
+    <Compile Include="forms\report\FormRptElementsByAtomicNum.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRptElementsByAtomicNum.Designer.cs">
+    <Compile Include="forms\report\FormRptElementsByAtomicNum.Designer.cs">
       <DependentUpon>FormRptElementsByAtomicNum.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRptElementsByAtomicWeight.cs">
+    <Compile Include="forms\report\FormRptElementsByAtomicWeight.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRptElementsByAtomicWeight.Designer.cs">
+    <Compile Include="forms\report\FormRptElementsByAtomicWeight.Designer.cs">
       <DependentUpon>FormRptElementsByAtomicWeight.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTblCities.cs">
+    <Compile Include="forms\table\FormTblCities.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTblCities.Designer.cs">
+    <Compile Include="forms\table\FormTblCities.Designer.cs">
       <DependentUpon>FormTblCities.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTblElements.cs">
+    <Compile Include="forms\table\FormTblElements.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTblElements.Designer.cs">
+    <Compile Include="forms\table\FormTblElements.Designer.cs">
       <DependentUpon>FormTblElements.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTblCategories.cs">
+    <Compile Include="forms\table\FormTblCategories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTblCategories.Designer.cs">
+    <Compile Include="forms\table\FormTblCategories.Designer.cs">
       <DependentUpon>FormTblCategories.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTblGroups.cs">
+    <Compile Include="forms\table\FormTblGroups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTblGroups.Designer.cs">
+    <Compile Include="forms\table\FormTblGroups.Designer.cs">
       <DependentUpon>FormTblGroups.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTblProperties.cs">
+    <Compile Include="forms\table\FormTblProperties.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTblProperties.Designer.cs">
+    <Compile Include="forms\table\FormTblProperties.Designer.cs">
       <DependentUpon>FormTblProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTblPropertiesInElement.cs">
+    <Compile Include="forms\table\FormTblPropertiesInElement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTblPropertiesInElement.Designer.cs">
+    <Compile Include="forms\table\FormTblPropertiesInElement.Designer.cs">
       <DependentUpon>FormTblPropertiesInElement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTblUsers.cs">
+    <Compile Include="forms\table\FormTblUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTblUsers.Designer.cs">
+    <Compile Include="forms\table\FormTblUsers.Designer.cs">
       <DependentUpon>FormTblUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUpdateElements.cs">
+    <Compile Include="forms\update\FormUpdateElements.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUpdateElements.designer.cs">
+    <Compile Include="forms\update\FormUpdateElements.designer.cs">
       <DependentUpon>FormUpdateElements.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUpdateGroups.cs">
+    <Compile Include="forms\update\FormUpdateGroups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUpdateGroups.designer.cs">
+    <Compile Include="forms\update\FormUpdateGroups.designer.cs">
       <DependentUpon>FormUpdateGroups.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUpdateProperties.cs">
+    <Compile Include="forms\update\FormUpdateProperties.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUpdateProperties.designer.cs">
+    <Compile Include="forms\update\FormUpdateProperties.designer.cs">
       <DependentUpon>FormUpdateProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUpdateUsers.cs">
+    <Compile Include="forms\update\FormUpdateUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUpdateUsers.designer.cs">
+    <Compile Include="forms\update\FormUpdateUsers.designer.cs">
       <DependentUpon>FormUpdateUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="IDValidation.cs" />
+    <Compile Include="modules\IDValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAddCategories.resx">
+    <EmbeddedResource Include="forms\add\FormAddCategories.resx">
       <DependentUpon>FormAddCategories.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddPropertiesInElement.resx">
+    <EmbeddedResource Include="forms\add\FormAddPropertiesInElement.resx">
       <DependentUpon>FormAddPropertiesInElement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddProperties.resx">
+    <EmbeddedResource Include="forms\add\FormAddProperties.resx">
       <DependentUpon>FormAddProperties.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddGroups.resx">
+    <EmbeddedResource Include="forms\add\FormAddGroups.resx">
       <DependentUpon>FormAddGroups.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddCities.resx">
+    <EmbeddedResource Include="forms\add\FormAddCities.resx">
       <DependentUpon>FormAddCities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddElements.resx">
+    <EmbeddedResource Include="forms\add\FormAddElements.resx">
       <DependentUpon>FormAddElements.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddUser.resx">
+    <EmbeddedResource Include="forms\add\FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChartElementsByCategory.resx">
+    <EmbeddedResource Include="forms\chart\FormChartElementsByCategory.resx">
       <DependentUpon>FormChartElementsByCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChartElementsByProperty.resx">
+    <EmbeddedResource Include="forms\chart\FormChartElementsByProperty.resx">
       <DependentUpon>FormChartElementsByProperty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChartElementsByGroup.resx">
+    <EmbeddedResource Include="forms\chart\FormChartElementsByGroup.resx">
       <DependentUpon>FormChartElementsByGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChartElementsByAtomicNum.resx">
+    <EmbeddedResource Include="forms\chart\FormChartElementsByAtomicNum.resx">
       <DependentUpon>FormChartElementsByAtomicNum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenu.resx">
+    <EmbeddedResource Include="forms\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPeriodicalTable.resx">
+    <EmbeddedResource Include="forms\FormPeriodicalTable.resx">
       <DependentUpon>FormPeriodicalTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChartElementsByAtomicWeight.resx">
+    <EmbeddedResource Include="forms\chart\FormChartElementsByAtomicWeight.resx">
       <DependentUpon>FormChartElementsByAtomicWeight.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRptElementsByCategory.resx">
+    <EmbeddedResource Include="forms\report\FormRptElementsByCategory.resx">
       <DependentUpon>FormRptElementsByCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRptElementsByProperty.resx">
+    <EmbeddedResource Include="forms\report\FormRptElementsByProperty.resx">
       <DependentUpon>FormRptElementsByProperty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRptElementsByGroup.resx">
+    <EmbeddedResource Include="forms\report\FormRptElementsByGroup.resx">
       <DependentUpon>FormRptElementsByGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRptElementsByAtomicNum.resx">
+    <EmbeddedResource Include="forms\report\FormRptElementsByAtomicNum.resx">
       <DependentUpon>FormRptElementsByAtomicNum.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRptElementsByAtomicWeight.resx">
+    <EmbeddedResource Include="forms\report\FormRptElementsByAtomicWeight.resx">
       <DependentUpon>FormRptElementsByAtomicWeight.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTblCities.resx">
+    <EmbeddedResource Include="forms\table\FormTblCities.resx">
       <DependentUpon>FormTblCities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTblElements.resx">
+    <EmbeddedResource Include="forms\table\FormTblElements.resx">
       <DependentUpon>FormTblElements.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTblCategories.resx">
+    <EmbeddedResource Include="forms\table\FormTblCategories.resx">
       <DependentUpon>FormTblCategories.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTblGroups.resx">
+    <EmbeddedResource Include="forms\table\FormTblGroups.resx">
       <DependentUpon>FormTblGroups.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTblProperties.resx">
+    <EmbeddedResource Include="forms\table\FormTblProperties.resx">
       <DependentUpon>FormTblProperties.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTblPropertiesInElement.resx">
+    <EmbeddedResource Include="forms\table\FormTblPropertiesInElement.resx">
       <DependentUpon>FormTblPropertiesInElement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTblUsers.resx">
+    <EmbeddedResource Include="forms\table\FormTblUsers.resx">
       <DependentUpon>FormTblUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUpdateElements.resx">
+    <EmbeddedResource Include="forms\update\FormUpdateElements.resx">
       <DependentUpon>FormUpdateElements.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUpdateGroups.resx">
+    <EmbeddedResource Include="forms\update\FormUpdateGroups.resx">
       <DependentUpon>FormUpdateGroups.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUpdateProperties.resx">
+    <EmbeddedResource Include="forms\update\FormUpdateProperties.resx">
       <DependentUpon>FormUpdateProperties.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUpdateUsers.resx">
+    <EmbeddedResource Include="forms\update\FormUpdateUsers.resx">
       <DependentUpon>FormUpdateUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -482,5 +483,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
