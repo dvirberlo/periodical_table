@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,62 @@ namespace PeriodicalTable.backend
         public Object[] GetUserOverview(String id)
         {
             return GetOneRow("tblUsers", "userID, userPassword, userIsManager, userFirstName, userLastName, userPicture", "WHERE userID=" + id);
+        }
+        public List<String> ListForCombo(String table, String col)
+        {
+            List<String> data = new List<String>();
+            try
+            {
+                OleDbCommand dataCommand = new OleDbCommand();
+                dataCommand.Connection = dataConnection;
+                dataCommand.CommandText = "SELECT " + col + " FROM " + table;
+                OleDbDataReader dataReader = dataCommand.ExecuteReader();
+                while (dataReader.Read()) data.Add(dataReader.GetString(0));
+                dataReader.Close();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            return data;
+        }
+        public bool Insert(String table, String cols, Object[] values)
+        {
+            try
+            {
+                OleDbCommand datacommand = new OleDbCommand();
+                datacommand.Connection = dataConnection;
+                string str = "INSERT INTO "+ table +" " + "(" + cols + ") " + " VALUES (";
+                for(int i = 0; i < values.Length; i++)
+                {
+                    Object val = values[i];
+                    if (val is String || val is DateTime) str += "'";
+                    str += val.ToString();
+                    if (val is String || val is DateTime) str += "'";
+                    if (i != values.Length - 1) str += ",";
+                }
+                str += ")";
+                datacommand.CommandText = str;
+                datacommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception err) {}
+            return false;
+        }
+        public DataTable GetDataTable(String table)
+        {
+            try
+            {
+                OleDbCommand datacommand = new OleDbCommand();
+                datacommand.Connection = dataConnection;
+                string sqlCommand = "SELECT * FROM " + table;
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(sqlCommand, dataConnection);
+                DataTable data = new DataTable();
+                dataAdapter.Fill(data);
+                return data;
+            }
+            catch (Exception err){}
+            return null;
         }
     }
 }

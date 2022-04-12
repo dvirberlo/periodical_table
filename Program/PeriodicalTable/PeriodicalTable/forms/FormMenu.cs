@@ -8,16 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using PeriodicalTable.backend;
 
 namespace PeriodicalTable
 {
     public partial class FormMenu : Form
     {
-        private OleDbConnection dataConnection;
+        private DBManager db;
+        public OleDbConnection dataConnection;
         private bool isManager;
-        public FormMenu(OleDbConnection dataConnection, bool isManager)
+        public FormMenu(DBManager db, bool isManager)
         {
-            this.dataConnection = dataConnection;
+            this.db = db;
+            this.dataConnection = db.dataConnection;
             this.isManager = isManager;
             InitializeComponent();
 
@@ -69,36 +72,36 @@ namespace PeriodicalTable
         private void AddUsersClick(object sender, EventArgs e)
         {
             // FormAddUsers form = new FormAddUsers();
-            ShowFormAndHide(new FormAddUser(dataConnection));
+            ShowFormAndHide(new FormAddUser(db));
         }
 
         private void AddCitiesClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormAddCities(dataConnection));
+            ShowFormAndHide(new FormAddCities(db));
         }
 
         private void AddElementsClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormAddElements(dataConnection));
+            ShowFormAndHide(new FormAddElements(db));
         }
 
         private void AddGroupsClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormAddGroups(dataConnection));
+            ShowFormAndHide(new FormAddGroups(db));
         }
 
         private void AddPropertiesClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormAddProperties(dataConnection));
+            ShowFormAndHide(new FormAddProperties(db));
         }
 
         private void AddPropertiesInElementClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormAddPropertiesInElement(dataConnection));
+            ShowFormAndHide(new FormAddPropertiesInElement(db));
         }
         private void AddCategoriesClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormAddCategories(dataConnection));
+            ShowFormAndHide(new FormAddCategories(db));
         }
 
         //update

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 using PeriodicalTable.backend;
 
 namespace PeriodicalTable
@@ -59,7 +58,7 @@ namespace PeriodicalTable
         private void continueClick(object sender, EventArgs e)
         {
             this.Hide();
-            FormMenu frMenu = new FormMenu(db.dataConnection, isManager);
+            FormMenu frMenu = new FormMenu(db, isManager);
             frMenu.Show();
             frMenu.Disposed += new EventHandler(frMenu_Disposed);
         }

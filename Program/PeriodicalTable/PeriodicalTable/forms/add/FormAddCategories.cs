@@ -7,69 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using PeriodicalTable.backend;
 
 namespace PeriodicalTable
 {
     public partial class FormAddCategories : Form
     {
-        private OleDbConnection dataConnection;
-        public FormAddCategories(OleDbConnection dataConnection)
+        private DBManager db;
+        public FormAddCategories(DBManager db)
         {
             InitializeComponent();
-            this.dataConnection = dataConnection;
+            this.db = db;
         }
 
 
         private void buttonAdd_Click(object sender, EventArgs e)                   // Add user to table
         {
-            try
+            String cols = "categoryName";
+            Object[] vals = { userFirstName.Text };
+            if (!db.Insert("tblCategories", cols, vals))
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                // dataGridView1.RowCount
-                string str = string.Format
-                                    ("INSERT INTO tblCategories " +
-                                     "(categoryName) " +
-                                     " VALUES ( \"{0}\")",
-                                       userFirstName.Text);
-                datacommand.CommandText = str;
-                datacommand.ExecuteNonQuery();
-                MessageBox.Show("Insert into tblCategories ended successfully");
-                RefreshDataGridView();
+                MessageBox.Show("Insert failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Insert into tblCategories failed \n" + err.Message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show("Inserted successfully");
+            RefreshDataGridView();
         }
 
         private void FormAddCategories_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSetCategories.tblCategories' table. You can move, or remove it, as needed.
             this.tblCategoriesTableAdapter.Fill(this.dataSetCategories.tblCategories);
-            this.tblCategoriesTableAdapter.Fill(this.dataSetCategories.tblCategories);
         }
 
-        private void RefreshDataGridView()  
+        private void RefreshDataGridView()
         {
-            try
+            DataTable tbl = db.GetDataTable("tblCategories");
+            if (tbl == null)
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                string sqlCommand = "SELECT   * " +
-                                     "FROM     tblCategories ";
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(sqlCommand, dataConnection);
-                DataTable tbl = new DataTable();
-                dataAdapter.Fill(tbl);
-                dataGridView1.DataSource = tbl;
-                dataGridView1.AllowUserToAddRows = false;
+                MessageBox.Show("Refresh dataGridView failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Refresh dataGridView failed \n" + err.Message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dataGridView1.DataSource = tbl;
+            dataGridView1.AllowUserToAddRows = false;
         }
     }
 }

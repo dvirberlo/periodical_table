@@ -7,66 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using PeriodicalTable.backend;
 
 namespace PeriodicalTable
 {
     public partial class FormAddElements : Form
     {
-        private OleDbConnection dataConnection;
-        public FormAddElements(OleDbConnection dataConnection)
+        private DBManager db;
+        public FormAddElements(DBManager db)
         {
             InitializeComponent();
-            this.dataConnection = dataConnection;
+            this.db = db;
             FillGroupsCombo();
         }
 
         private void FillGroupsCombo()                                   // Populate cities combobox
         {
-            try                             
+            List<String> values = db.ListForCombo("tblGroups", "*");
+            if (values == null)
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                datacommand.CommandText = "SELECT * " +
-                                          "FROM tblGroups ";
-                                          // BY cityName";
-                OleDbDataReader dataReader = datacommand.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    comboCity.Items.Add(dataReader.GetString(0));
-                }
-                dataReader.Close();
+                MessageBox.Show("Fill combobox failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Fill groups combobox failed \n" + err.Message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            foreach (String val in values) comboGroup.Items.Add(val);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)                   // Add user to table
         {
-            try
+            String cols = "elemSymbol, elemID, elemFullName, elemEnName, elemHeName, elemRow, elemColumn, elemGroup, elemAtomicWeight, elemEnergyLevels, elemPicture";
+            Object[] vals = { symbol.Text, int.Parse(elemID.Text), fullName.Text, enName.Text, heName.Text, int.Parse(elemRow.Text), int.Parse(elemCol.Text), comboGroup.Text, double.Parse(elemW.Text), energyLevels.Text, pictureLocation.Text };
+            if (!db.Insert("tblElements", cols, vals))
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                // dataGridView1.RowCount
-                string str = string.Format
-                                    ("INSERT INTO tblElements " +
-                                     "(elemSymbol, elemID, elemFullName, elemEnName, elemHeName, elemRow, elemColumn, elemGroup, elemAtomicWeight, elemEnergyLevels, elemPicture) " +
-                                     " VALUES ( \"{0}\", {1}, \"{2}\", \"{3}\", \"{4}\", {5}, {6}, \"{7}\", {8}, {9}, \"{10}\")",
-                                       userId.Text, userFirstName.Text, userLastName.Text, enName.Text,
-                                       userAddress.Text, phone.Text, mail.Text, comboCity.Text, userPassword.Text, energyLevels.Text, pictureLocation.Text);
-                datacommand.CommandText = str;
-                datacommand.ExecuteNonQuery();
-                // dataSetElements
-                MessageBox.Show("Insert into tblElements ended successfully");
-                RefreshDataGridView();
+                MessageBox.Show("Insert failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Insert into tblElements failed \n" + err.Message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show("Inserted successfully");
+            RefreshDataGridView();
         }
 
         private void FormAddStudent_Load(object sender, EventArgs e)
@@ -81,23 +57,14 @@ namespace PeriodicalTable
 
         private void RefreshDataGridView()  
         {
-            try
+            DataTable tbl = db.GetDataTable("tblElements");
+            if (tbl == null)
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                string sqlCommand = "SELECT   * " +
-                                     "FROM     tblElements ";
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(sqlCommand, dataConnection);
-                DataTable tbl = new DataTable();
-                dataAdapter.Fill(tbl);
-                dataGridView1.DataSource = tbl;
-                dataGridView1.AllowUserToAddRows = false;
+                MessageBox.Show("Refresh dataGridView failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Refresh dataGridView failed \n" + err.Message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dataGridView1.DataSource = tbl;
+            dataGridView1.AllowUserToAddRows = false;
         }
 
         private void buttonBrowse_Click(object sender, EventArgs e)

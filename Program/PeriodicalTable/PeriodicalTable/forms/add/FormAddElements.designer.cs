@@ -31,21 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.userId = new System.Windows.Forms.TextBox();
+            this.symbol = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.userFirstName = new System.Windows.Forms.TextBox();
+            this.elemID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.userLastName = new System.Windows.Forms.TextBox();
+            this.fullName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.userAddress = new System.Windows.Forms.TextBox();
+            this.heName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.comboCity = new System.Windows.Forms.ComboBox();
+            this.comboGroup = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.phone = new System.Windows.Forms.TextBox();
-            this.mail = new System.Windows.Forms.TextBox();
+            this.elemRow = new System.Windows.Forms.TextBox();
+            this.elemCol = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureLocation = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@
             this.tblElementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetElements = new PeriodicalTable.DataSetElements();
             this.label11 = new System.Windows.Forms.Label();
-            this.userPassword = new System.Windows.Forms.TextBox();
+            this.elemW = new System.Windows.Forms.TextBox();
             this.tblElementsTableAdapter = new PeriodicalTable.DataSetElementsTableAdapters.tblElementsTableAdapter();
             this.label12 = new System.Windows.Forms.Label();
             this.energyLevels = new System.Windows.Forms.TextBox();
@@ -99,14 +99,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "סימן";
             // 
-            // userId
+            // symbol
             // 
-            this.userId.Location = new System.Drawing.Point(934, 55);
-            this.userId.Margin = new System.Windows.Forms.Padding(4);
-            this.userId.Name = "userId";
-            this.userId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.userId.Size = new System.Drawing.Size(132, 22);
-            this.userId.TabIndex = 1;
+            this.symbol.Location = new System.Drawing.Point(934, 55);
+            this.symbol.Margin = new System.Windows.Forms.Padding(4);
+            this.symbol.Name = "symbol";
+            this.symbol.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.symbol.Size = new System.Drawing.Size(132, 22);
+            this.symbol.TabIndex = 1;
             // 
             // label3
             // 
@@ -118,14 +118,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "מספר סידורי";
             // 
-            // userFirstName
+            // elemID
             // 
-            this.userFirstName.Location = new System.Drawing.Point(565, 53);
-            this.userFirstName.Margin = new System.Windows.Forms.Padding(4);
-            this.userFirstName.Name = "userFirstName";
-            this.userFirstName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.userFirstName.Size = new System.Drawing.Size(143, 22);
-            this.userFirstName.TabIndex = 2;
+            this.elemID.Location = new System.Drawing.Point(565, 53);
+            this.elemID.Margin = new System.Windows.Forms.Padding(4);
+            this.elemID.Name = "elemID";
+            this.elemID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.elemID.Size = new System.Drawing.Size(143, 22);
+            this.elemID.TabIndex = 2;
             // 
             // label4
             // 
@@ -137,14 +137,14 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "שם מלא";
             // 
-            // userLastName
+            // fullName
             // 
-            this.userLastName.Location = new System.Drawing.Point(934, 101);
-            this.userLastName.Margin = new System.Windows.Forms.Padding(4);
-            this.userLastName.Name = "userLastName";
-            this.userLastName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.userLastName.Size = new System.Drawing.Size(132, 22);
-            this.userLastName.TabIndex = 3;
+            this.fullName.Location = new System.Drawing.Point(934, 101);
+            this.fullName.Margin = new System.Windows.Forms.Padding(4);
+            this.fullName.Name = "fullName";
+            this.fullName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fullName.Size = new System.Drawing.Size(132, 22);
+            this.fullName.TabIndex = 3;
             // 
             // label5
             // 
@@ -166,14 +166,14 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "שם עברי";
             // 
-            // userAddress
+            // heName
             // 
-            this.userAddress.Location = new System.Drawing.Point(240, 97);
-            this.userAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.userAddress.Name = "userAddress";
-            this.userAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.userAddress.Size = new System.Drawing.Size(179, 22);
-            this.userAddress.TabIndex = 5;
+            this.heName.Location = new System.Drawing.Point(240, 97);
+            this.heName.Margin = new System.Windows.Forms.Padding(4);
+            this.heName.Name = "heName";
+            this.heName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.heName.Size = new System.Drawing.Size(179, 22);
+            this.heName.TabIndex = 5;
             // 
             // label7
             // 
@@ -197,15 +197,15 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // comboCity
+            // comboGroup
             // 
-            this.comboCity.FormattingEnabled = true;
-            this.comboCity.Location = new System.Drawing.Point(934, 160);
-            this.comboCity.Margin = new System.Windows.Forms.Padding(4);
-            this.comboCity.Name = "comboCity";
-            this.comboCity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboCity.Size = new System.Drawing.Size(132, 24);
-            this.comboCity.TabIndex = 6;
+            this.comboGroup.FormattingEnabled = true;
+            this.comboGroup.Location = new System.Drawing.Point(934, 160);
+            this.comboGroup.Margin = new System.Windows.Forms.Padding(4);
+            this.comboGroup.Name = "comboGroup";
+            this.comboGroup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboGroup.Size = new System.Drawing.Size(132, 24);
+            this.comboGroup.TabIndex = 6;
             // 
             // label8
             // 
@@ -227,23 +227,23 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "טור";
             // 
-            // phone
+            // elemRow
             // 
-            this.phone.Location = new System.Drawing.Point(341, 50);
-            this.phone.Margin = new System.Windows.Forms.Padding(4);
-            this.phone.Name = "phone";
-            this.phone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.phone.Size = new System.Drawing.Size(78, 22);
-            this.phone.TabIndex = 20;
+            this.elemRow.Location = new System.Drawing.Point(341, 50);
+            this.elemRow.Margin = new System.Windows.Forms.Padding(4);
+            this.elemRow.Name = "elemRow";
+            this.elemRow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.elemRow.Size = new System.Drawing.Size(78, 22);
+            this.elemRow.TabIndex = 20;
             // 
-            // mail
+            // elemCol
             // 
-            this.mail.Location = new System.Drawing.Point(169, 48);
-            this.mail.Margin = new System.Windows.Forms.Padding(4);
-            this.mail.Name = "mail";
-            this.mail.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.mail.Size = new System.Drawing.Size(61, 22);
-            this.mail.TabIndex = 21;
+            this.elemCol.Location = new System.Drawing.Point(169, 48);
+            this.elemCol.Margin = new System.Windows.Forms.Padding(4);
+            this.elemCol.Name = "elemCol";
+            this.elemCol.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.elemCol.Size = new System.Drawing.Size(61, 22);
+            this.elemCol.TabIndex = 21;
             // 
             // pictureBox1
             // 
@@ -397,14 +397,14 @@
             this.label11.TabIndex = 28;
             this.label11.Text = "משקל אטומי";
             // 
-            // userPassword
+            // elemW
             // 
-            this.userPassword.Location = new System.Drawing.Point(565, 162);
-            this.userPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.userPassword.Name = "userPassword";
-            this.userPassword.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.userPassword.Size = new System.Drawing.Size(143, 22);
-            this.userPassword.TabIndex = 29;
+            this.elemW.Location = new System.Drawing.Point(565, 162);
+            this.elemW.Margin = new System.Windows.Forms.Padding(4);
+            this.elemW.Name = "elemW";
+            this.elemW.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.elemW.Size = new System.Drawing.Size(143, 22);
+            this.elemW.TabIndex = 29;
             // 
             // tblElementsTableAdapter
             // 
@@ -455,28 +455,28 @@
             this.Controls.Add(this.enName);
             this.Controls.Add(this.energyLevels);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.userPassword);
+            this.Controls.Add(this.elemW);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.pictureLocation);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.mail);
-            this.Controls.Add(this.phone);
+            this.Controls.Add(this.elemCol);
+            this.Controls.Add(this.elemRow);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboCity);
+            this.Controls.Add(this.comboGroup);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.userAddress);
+            this.Controls.Add(this.heName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.userLastName);
+            this.Controls.Add(this.fullName);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.userFirstName);
+            this.Controls.Add(this.elemID);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.userId);
+            this.Controls.Add(this.symbol);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -496,21 +496,21 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox userId;
+        private System.Windows.Forms.TextBox symbol;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox userFirstName;
+        private System.Windows.Forms.TextBox elemID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox userLastName;
+        private System.Windows.Forms.TextBox fullName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox userAddress;
+        private System.Windows.Forms.TextBox heName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.ComboBox comboCity;
+        private System.Windows.Forms.ComboBox comboGroup;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox phone;
-        private System.Windows.Forms.TextBox mail;
+        private System.Windows.Forms.TextBox elemRow;
+        private System.Windows.Forms.TextBox elemCol;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox pictureLocation;
@@ -518,7 +518,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox userPassword;
+        private System.Windows.Forms.TextBox elemW;
         private DataSetElements dataSetElements;
         private System.Windows.Forms.BindingSource tblElementsBindingSource;
         private DataSetElementsTableAdapters.tblElementsTableAdapter tblElementsTableAdapter;

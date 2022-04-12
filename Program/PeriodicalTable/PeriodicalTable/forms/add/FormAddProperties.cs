@@ -7,65 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using PeriodicalTable.backend;
 
 namespace PeriodicalTable
 {
     public partial class FormAddProperties : Form
     {
-        private OleDbConnection dataConnection;
-        public FormAddProperties(OleDbConnection dataConnection)
+        private DBManager db;
+        public FormAddProperties(DBManager db)
         {
             InitializeComponent();
-            this.dataConnection = dataConnection;
+            this.db = db;
             FillCatCombo();
         }
 
         private void FillCatCombo()                                   // Populate cities combobox
         {
-            try
+            List<String> values = db.ListForCombo("tblCategories", "*");
+            if (values == null)
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                datacommand.CommandText = "SELECT * " +
-                                          "FROM tblCategories ";
-                // BY cityName";
-                OleDbDataReader dataReader = datacommand.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    groupColor.Items.Add(dataReader.GetString(0));
-                }
-                dataReader.Close();
+                MessageBox.Show("Fill combobox failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Fill cities combobox failed \n" + err.Message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            foreach (String val in values) groupColor.Items.Add(val);
         }
 
 
         private void buttonAdd_Click(object sender, EventArgs e)                   // Add user to table
         {
-            try
+            String cols = "PropertyName, PropertyCategory";
+            Object[] vals = { userFirstName.Text, groupColor.Text };
+            if (!db.Insert("tblProperties", cols, vals))
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                // dataGridView1.RowCount
-                string str = string.Format
-                                    ("INSERT INTO tblProperties " +
-                                     "(PropertyName, PropertyCategory) " +
-                                     " VALUES ( \"{0}\", \"{1}\")",
-                                       userFirstName.Text, groupColor.Text);
-                datacommand.CommandText = str;
-                datacommand.ExecuteNonQuery();
-                MessageBox.Show("Insert into tblProperties ended successfully");
-                RefreshDataGridView();
+                MessageBox.Show("Insert failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Insert into tblProperties failed \n" + err.Message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            MessageBox.Show("Inserted successfully");
+            RefreshDataGridView();
         }
 
         private void FormAddStudent_Load(object sender, EventArgs e)
@@ -84,23 +62,14 @@ namespace PeriodicalTable
 
         private void RefreshDataGridView()  
         {
-            try
+            DataTable tbl = db.GetDataTable("tblProperties");
+            if (tbl == null)
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                string sqlCommand = "SELECT   * " +
-                                     "FROM     tblProperties ";
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(sqlCommand, dataConnection);
-                DataTable tbl = new DataTable();
-                dataAdapter.Fill(tbl);
-                dataGridView1.DataSource = tbl;
-                dataGridView1.AllowUserToAddRows = false;
+                MessageBox.Show("Refresh dataGridView failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Refresh dataGridView failed \n" + err.Message, "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dataGridView1.DataSource = tbl;
+            dataGridView1.AllowUserToAddRows = false;
         }
     }
 }
