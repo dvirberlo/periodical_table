@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using PeriodicalTable.backend;
+using PeriodicalTable.modules;
 
 namespace PeriodicalTable
 {
@@ -35,7 +36,7 @@ namespace PeriodicalTable
         private void buttonAdd_Click(object sender, EventArgs e)                   // Add user to table
         {
             String cols = "elemSymbol, elemID, elemFullName, elemEnName, elemHeName, elemRow, elemColumn, elemGroup, elemAtomicWeight, elemEnergyLevels, elemPicture";
-            Object[] vals = { symbol.Text, int.Parse(elemID.Text), fullName.Text, enName.Text, heName.Text, int.Parse(elemRow.Text), int.Parse(elemCol.Text), comboGroup.Text, double.Parse(elemW.Text), energyLevels.Text, pictureLocation.Text };
+            Object[] vals = { symbol.Text, Convertings.IntParse(elemID.Text), fullName.Text, enName.Text, heName.Text, Convertings.IntParse(elemRow.Text), Convertings.IntParse(elemCol.Text), comboGroup.Text, Convertings.DoubleParse(elemW.Text), energyLevels.Text, pictureLocation.Text };
             if (!db.Insert("tblElements", cols, vals))
             {
                 MessageBox.Show("Insert failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

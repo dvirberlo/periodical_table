@@ -35,12 +35,12 @@ namespace PeriodicalTable
 
         private void buttonAdd_Click(object sender, EventArgs e)                   // Add user to table
         {
-            if(!IDValidation.IsValidID(int.Parse(userId.Text))){
+            if(!IDValidation.IsValidID(Convertings.IntParse(userId.Text))){
                 MessageBox.Show("Please enter valid ID", "Invalid ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             String cols = "userID, userFirstName, userLastName, userBirthDate, userAddress, userCity, userPhone, userMail, userPassword, userIsManager, userPicture";
-            Object[] vals = { int.Parse(userId.Text), userFirstName.Text, userLastName.Text, userBirthDate.Value, userAddress.Text, comboCity.Text, phone.Text, mail.Text, userPassword.Text, isUserManager.Checked, pictureLocation.Text };
+            Object[] vals = { Convertings.IntParse(userId.Text), userFirstName.Text, userLastName.Text, userBirthDate.Value, userAddress.Text, comboCity.Text, phone.Text, mail.Text, userPassword.Text, isUserManager.Checked, pictureLocation.Text };
             if (!db.Insert("tblUsers", cols, vals))
             {
                 MessageBox.Show("Insert failed" , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

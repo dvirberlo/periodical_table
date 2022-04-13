@@ -39,6 +39,7 @@ namespace PeriodicalTable
                     width = this.listView.Width / (cols.Length + 1);
                 listView.Columns.Add(col, width, HorizontalAlignment.Left);
             }
+
         }
 
         private void FromAtoomicChanged(object sender, EventArgs e)
@@ -74,6 +75,9 @@ namespace PeriodicalTable
                 cb.Items.Add(atomicWeight);
             }
             cbReader.Close();
+
+            cb.SelectedText = cb.Items[0].ToString();
+
         }
         private void AddFromDB(ListView lv, String cmd)
         {

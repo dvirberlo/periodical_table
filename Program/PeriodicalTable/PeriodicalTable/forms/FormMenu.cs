@@ -32,6 +32,18 @@ namespace PeriodicalTable
             }
         }
 
+        public void ShowFormAndHide(Form form)
+        {
+            this.Hide();
+            form.Show();
+            form.Disposed += new EventHandler(formCloseCallback);
+        }
+        void formCloseCallback(object sender, EventArgs e)
+        {
+            this.Show();
+            this.Activate();
+        }
+
 
         // tables
         private void CitiesClick(object sender, EventArgs e)
@@ -126,17 +138,7 @@ namespace PeriodicalTable
             ShowFormAndHide(new FormUpdateProperties(db));
         }
 
-        public void ShowFormAndHide(Form form)
-        {
-            this.Hide();
-            form.Show();
-            form.Disposed += new EventHandler(formCloseCallback);
-        }
-        void formCloseCallback(object sender, EventArgs e)
-        {
-            this.Show();
-            this.Activate();
-        }
+        // periodical table
 
         private void PeriodicalTableClick(object sender, EventArgs e)
         {

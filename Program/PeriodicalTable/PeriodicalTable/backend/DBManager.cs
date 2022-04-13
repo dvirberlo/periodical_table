@@ -11,7 +11,7 @@ namespace PeriodicalTable.backend
 {
     public class DBManager
     {
-        // TODO: make private
+        // TODO: make private, FillFromDB, GetGroups/Elements, reports/charts
         public OleDbConnection dataConnection;
         public DBManager(String connectionString)
         {

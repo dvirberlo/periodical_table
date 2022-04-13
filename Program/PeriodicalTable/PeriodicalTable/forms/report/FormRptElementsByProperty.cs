@@ -69,6 +69,8 @@ namespace PeriodicalTable
                 cb.Items.Add(index);
             }
             cbReader.Close();
+
+            cb.SelectedText = cb.Items[0].ToString();
         }
         private void AddFromDB(ListView lv, String cmd)
         {

@@ -277,6 +277,7 @@
     <Compile Include="forms\update\FormUpdateUsers.designer.cs">
       <DependentUpon>FormUpdateUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="modules\Convertings.cs" />
     <Compile Include="modules\IDValidation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
