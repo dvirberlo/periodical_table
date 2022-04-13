@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using PeriodicalTable.backend;
+using PeriodicalTable.modules;
 
 namespace PeriodicalTable
 {

@@ -40,7 +40,7 @@ namespace PeriodicalTable.backend
                 dataReader.GetValues(data);
                 dataReader.Close();
             }
-            catch (Exception e)
+            catch
             {
                 return null;
             }
@@ -63,7 +63,7 @@ namespace PeriodicalTable.backend
                 while (dataReader.Read()) data.Add(dataReader.GetString(0));
                 dataReader.Close();
             }
-            catch (Exception e)
+            catch
             {
                 return null;
             }
@@ -89,7 +89,7 @@ namespace PeriodicalTable.backend
                 datacommand.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception err) {}
+            catch {}
             return false;
         }
         public DataTable GetDataTable(String table)
@@ -104,7 +104,7 @@ namespace PeriodicalTable.backend
                 dataAdapter.Fill(data);
                 return data;
             }
-            catch (Exception err){}
+            catch {}
             return null;
         }
     }
