@@ -54,8 +54,6 @@ namespace PeriodicalTable
         {
             // TODO: This line of code loads data into the 'dataSetUsers.tblUsers' table. You can move, or remove it, as needed.
             this.tblUsersTableAdapter.Fill(this.dataSetUsers.tblUsers);
-            // TODO: This line of code loads data into the 'dataSetUsers.tblUsers' table. You can move, or remove it, as needed.
-            this.tblUsersTableAdapter.Fill(this.dataSetUsers.tblUsers);
         }
 
         private void RefreshDataGridView()  

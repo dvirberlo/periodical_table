@@ -107,5 +107,35 @@ namespace PeriodicalTable.backend
             catch {}
             return null;
         }
+        public bool Update(String table, String cols, Object[] values)
+        {
+            try
+            {
+                String[] colsArr = cols.Split(',');
+                OleDbCommand datacommand = new OleDbCommand();
+                datacommand.Connection = dataConnection;
+                string str = "UPDATE " + table + " SET ";
+                for (int i = 1; i < values.Length; i++)
+                {
+                    str += colsArr[i] + " = ";
+                    Object val = values[i];
+                    if (val is String || val is DateTime) str += "'";
+                    str += val.ToString();
+                    if (val is String || val is DateTime) str += "'";
+                    if (i != values.Length - 1) str += ",";
+                }
+                str += " WHERE " + colsArr[0] + " = ";
+                if (values[0] is String) str += "'";
+                str += values[0];
+                if (values[0] is String) str += "'";
+                datacommand.CommandText = str;
+                datacommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e) {
+                ;
+            }
+            return false;
+        }
     }
 }

@@ -50,14 +50,6 @@ namespace PeriodicalTable
         {
             // TODO: This line of code loads data into the 'dataSetProperties.tblProperties' table. You can move, or remove it, as needed.
             this.tblPropertiesTableAdapter.Fill(this.dataSetProperties.tblProperties);
-            // TODO: This line of code loads data into the 'dataSetProperties.tblProperties' table. You can move, or remove it, as needed.
-            this.tblPropertiesTableAdapter.Fill(this.dataSetProperties.tblProperties);
-            // TODO: This line of code loads data into the 'dataSetProperties.tblProperties' table. You can move, or remove it, as needed.
-            this.tblPropertiesTableAdapter.Fill(this.dataSetProperties.tblProperties);
-            // TODO: This line of code loads data into the 'dataSetProperties.tblProperties' table. You can move, or remove it, as needed.
-            this.tblPropertiesTableAdapter.Fill(this.dataSetProperties.tblProperties);
-            // TODO: This line of code loads data into the 'dataSetProperties.tblProperties' table. You can move, or remove it, as needed.
-            this.tblPropertiesTableAdapter.Fill(this.dataSetProperties.tblProperties);
         }
 
         private void RefreshDataGridView()  

@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using PeriodicalTable.backend;
 
 namespace PeriodicalTable
 {
     public partial class FormUpdateUsers : Form
     {
-        private OleDbConnection dataConnection;
+        private DBManager db;
         private int lastRow = 0;
-        public FormUpdateUsers(OleDbConnection dataConnection)
+        public FormUpdateUsers(DBManager db)
         {
             InitializeComponent();
-            this.dataConnection = dataConnection;
+            this.db = db;
             FillCityCombo();
             RefreshDataGridView();
         }
@@ -28,78 +29,41 @@ namespace PeriodicalTable
             this.tblUsersTableAdapter.Fill(this.dataSetUsers.tblUsers);
         }
 
-
-        private void FillCityCombo()                   // fill cities combobox
+        private void FillCityCombo()                                   // Populate cities combobox
         {
-            try
+            List<String> values = db.ListForCombo("tblCities", "*");
+            if (values == null)
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                datacommand.CommandText = "SELECT   * " +
-                                          "FROM     tblCities ";
-                OleDbDataReader dataReader = datacommand.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    comboCity.Items.Add(dataReader.GetString(0));
-                }
-                dataReader.Close();
+                MessageBox.Show("Fill combobox failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Fill cities combobox failed \n" + err.Message, "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            foreach (String val in values) comboCity.Items.Add(val);
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)          //Update students table
         {
-            try
+            String cols = "userID, userFirstName, userLastName, userBirthDate, userAddress, userCity, userPhone, userMail, userPassword, userIsManager, userPicture";
+            Object[] vals = { int.Parse(userID.Text), firstName.Text, lastName.Text, userBirthDate.Value, address.Text, comboCity.Text, phone.Text, mail.Text, userPass.Text, isManager.Checked, pictureLocation.Text };
+            if (!db.Update("tblUsers", cols, vals))
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                datacommand.CommandText = "UPDATE tblUsers  \n" +
-                                          "SET    userFirstName    =  '" + firstName.Text       + "' ," +
-                                                  "userLastName    =  '" + lastName.Text        + "' ," +
-                                                  "userBirthDate   =  '" + userBirthDate.Text   + "' ," +
-                                                  "userAddress     =  '" + address.Text         + "' ," +
-                                                  "userCity        =  '" + comboCity.Text       + "' ," +
-                                                  "userPhone       =  '" + phone.Text           + "' ," +
-                                                  "userMail        =  '" + mail.Text            + "' ," +
-                                                  "userPassword    =  '" + userPass.Text        + "' ," +
-                                                  "userIsManager   =    " + isManager.Checked    + "   ," +
-                                                  "userPicture     =  '" + pictureLocation.Text + "' " +
-                                          "\n WHERE  userID = " + userID.Text + ";";
-                datacommand.ExecuteNonQuery();
-                RefreshDataGridView();
-                dataGridView1.CurrentCell = dataGridView1[0, lastRow];
-                MessageBox.Show("Update tblUsers ended successfluly");
+                MessageBox.Show("Update failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Update tblUsers failed \n" + err.Message, "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            RefreshDataGridView();
+            dataGridView1.CurrentCell = dataGridView1[0, lastRow];
+            MessageBox.Show("Updated successfluly");
         }
-     
-        private void RefreshDataGridView() 
+
+        private void RefreshDataGridView()
         {
-            try
+            DataTable tbl = db.GetDataTable("tblUsers");
+            if (tbl == null)
             {
-                OleDbCommand datacommand = new OleDbCommand();
-                datacommand.Connection = dataConnection;
-                string sqlCommand = "SELECT   * " +
-                                     "FROM     tblUsers ";
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(sqlCommand, dataConnection);
-                DataTable tbl = new DataTable();
-                dataAdapter.Fill(tbl);
-                dataGridView1.DataSource = tbl;
-                dataGridView1.AllowUserToAddRows = false;
+                MessageBox.Show("Refresh dataGridView failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception err)
-            {
-                MessageBox.Show("Refresh tblUsers table failed \n" + err.Message, "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dataGridView1.DataSource = tbl;
+            dataGridView1.AllowUserToAddRows = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -112,6 +76,7 @@ namespace PeriodicalTable
 
         private void EnableButtons()
         {
+            buttonUpdate.Enabled = true;
             buttonPrev.Enabled = true;
             buttonNext.Enabled = true;
             if (lastRow == 0)

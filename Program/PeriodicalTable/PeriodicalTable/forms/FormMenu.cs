@@ -108,22 +108,22 @@ namespace PeriodicalTable
 
         private void UpdateUsersClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormUpdateUsers(dataConnection));
+            ShowFormAndHide(new FormUpdateUsers(db));
         }
 
         private void UpdateElementsClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormUpdateElements(dataConnection));
+            ShowFormAndHide(new FormUpdateElements(db));
         }
 
         private void UpdateGroupsClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormUpdateGroups(dataConnection));
+            ShowFormAndHide(new FormUpdateGroups(db));
         }
 
         private void UpdatePropertiesClick(object sender, EventArgs e)
         {
-            ShowFormAndHide(new FormUpdateProperties(dataConnection));
+            ShowFormAndHide(new FormUpdateProperties(db));
         }
 
         public void ShowFormAndHide(Form form)
