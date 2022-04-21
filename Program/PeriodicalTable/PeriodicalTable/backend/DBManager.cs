@@ -51,19 +51,23 @@ namespace PeriodicalTable.backend
         {
             return GetOneRow("tblUsers", "userID, userPassword, userIsManager, userFirstName, userLastName, userPicture", "WHERE userID=" + id);
         }
-        public List<String> ListForCombo(String table, String col)
+        //public List<String> ListForCombo(String table, String col)
+        //{
+        //    return ListForCombo(table, col, "");
+        //}
+        public List<String> ListForCombo(String table, String col, String cmd = "")
         {
             List<String> data = new List<String>();
             try
             {
                 OleDbCommand dataCommand = new OleDbCommand();
                 dataCommand.Connection = dataConnection;
-                dataCommand.CommandText = "SELECT " + col + " FROM " + table;
+                dataCommand.CommandText = "SELECT " + col + " FROM " + table + " " + cmd;
                 OleDbDataReader dataReader = dataCommand.ExecuteReader();
-                while (dataReader.Read()) data.Add(dataReader.GetString(0));
+                while (dataReader.Read()) data.Add(dataReader.GetValue(0).ToString());
                 dataReader.Close();
             }
-            catch
+            catch(Exception err)
             {
                 return null;
             }
@@ -136,6 +140,50 @@ namespace PeriodicalTable.backend
                 ;
             }
             return false;
+        }
+        public List<Object[]> GetTable(String table, String cols, String cmd)
+        {
+            try
+            {
+                List<Object[]> data = new List<Object[]>();
+                OleDbCommand dataCommand = new OleDbCommand();
+                dataCommand.Connection = dataConnection;
+                dataCommand.CommandText = "SELECT " + cols + " FROM " + table + " " + cmd;
+                OleDbDataReader dataReader = dataCommand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Object[] row = new Object[cols.Split(',').Length];
+                    dataReader.GetValues(row);
+                    data.Add(row);
+                }
+                return data;
+            }
+            catch (Exception err)
+            {
+                return null;
+            }
+        }
+        public Object[][] GetReport(String table, String cols, String cmd, String[] addCols)
+        {
+            Object[][] data = GetTable(table, cols, cmd).ToArray();
+            if (data == null) return null;
+            bool first = true;
+            String[] emptyCols = new String[addCols.Length];
+            for (int i = 0; i < data.Length; i++)
+            {
+                String[] itemArr = Array.ConvertAll(data[i], x => x.ToString());
+                if (first)
+                {
+                    itemArr = addCols.Concat(itemArr).ToArray();
+                    first = false;
+                }
+                else
+                {
+                    itemArr = emptyCols.Concat(itemArr).ToArray();
+                }
+                data[i] = itemArr;
+            }
+            return data;
         }
     }
 }

@@ -70,7 +70,7 @@ namespace PeriodicalTable
             }
             cbReader.Close();
 
-            cb.SelectedText = cb.Items[0].ToString();
+            cb.Text = cb.Items[0].ToString();
         }
         private void AddFromDB(ListView lv, String cmd)
         {

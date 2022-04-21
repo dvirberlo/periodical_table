@@ -8,23 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PeriodicalTable.backend;
 
 namespace PeriodicalTable
 {
     public partial class FormRptElementsByAtomicNum : Form
     {
         private OleDbConnection dataConnection;
+        private DBManager db;
 
         private Color lvColor = System.Drawing.ColorTranslator.FromHtml("#000000");
-        public FormRptElementsByAtomicNum(OleDbConnection dataConnection)
+        public FormRptElementsByAtomicNum(DBManager db)
         {
-            this.dataConnection = dataConnection;
+            this.db = db;
+            this.dataConnection = db.dataConnection;
             InitializeComponent();
             this.Shown += Setup;
         }
         private void Setup(Object sender, EventArgs e)
         {
-            FillFromDB(this.elemFrom, "");
+            FillFromDB(this.elemFrom, "ORDER BY elemID");
 
             listView.Columns.Clear();
             //string strCols = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
@@ -47,7 +50,7 @@ namespace PeriodicalTable
             this.elemTo.Enabled = true;
             this.addBtn.Enabled = true;
             String from = this.elemFrom.Text;
-            String cmd = " WHERE elemID >= " + from;
+            String cmd = " WHERE elemID >= " + from + "\n ORDER BY elemID";
             FillFromDB(this.elemTo, cmd);
         }
 
@@ -55,59 +58,35 @@ namespace PeriodicalTable
         {
             String from = this.elemFrom.Text;
             String to = this.elemTo.Text;
-            String cmd = " WHERE elemID >= " + from + " AND elemID <= " + to;
+            String cmd = " WHERE elemID >= " + from + " AND elemID <= " + to + "\n ORDER BY elemID";
             AddFromDB(this.listView, cmd);
         }
 
         private void FillFromDB(ComboBox cb, String cmd)
         {
             cb.Items.Clear();
-            OleDbCommand cbCommand = new OleDbCommand();
-            cbCommand.Connection = dataConnection;
-            String elemSelects = "elemID";
-            cbCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemID";
-            OleDbDataReader cbReader = cbCommand.ExecuteReader();
-            while (cbReader.Read())
+            List<String> data = db.ListForCombo("tblElements", "elemID", cmd: cmd);
+            if (data == null) return;
+            foreach (String val in data)
             {
-                object[] elemObj = new object[elemSelects.Split(',').Length];
-                int len = cbReader.GetValues(elemObj);
-                double atomicWeight = Convert.ToDouble(elemObj[0]);
-                cb.Items.Add(atomicWeight);
+                cb.Items.Add(val);
             }
-            cbReader.Close();
 
-            cb.SelectedText = cb.Items[0].ToString();
+            cb.Text = cb.Items[0].ToString();
         }
         private void AddFromDB(ListView lv, String cmd)
         {
             OleDbCommand lvCommand = new OleDbCommand();
-            lvCommand.Connection = dataConnection;
             String elemSelects = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemID,elemEnergyLevels";
-            lvCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemID";
-            OleDbDataReader lvReader = lvCommand.ExecuteReader();
-            bool first = true;
-            while (lvReader.Read())
+            String[] addCols = { this.elemFrom.Text, this.elemTo.Text };
+            Object[][] data = db.GetReport("tblElements", elemSelects, cmd, addCols);
+            if (data == null) return;
+            foreach (String[] row in data)
             {
-                object[] elemObj = new object[elemSelects.Split(',').Length];
-                int len = lvReader.GetValues(elemObj);
-                String[] elemStrArr = Array.ConvertAll(elemObj, x => x.ToString());
-                String[] itemArr;
-                if (first)
-                {
-                    String[] twoCols = { this.elemFrom.Text, this.elemTo.Text };
-                    itemArr = twoCols.Concat(elemStrArr).ToArray();
-                    first = false;
-                }
-                else
-                {
-                    String[] twoCols = { "", "" };
-                    itemArr = twoCols.Concat(elemStrArr).ToArray();
-                }
-                ListViewItem item = new ListViewItem(itemArr);
+                ListViewItem item = new ListViewItem(row);
                 item.ForeColor = lvColor;
                 lv.Items.Add(item);
             }
-            lvReader.Close();
         }
 
         private void clearBtnClick(object sender, EventArgs e)

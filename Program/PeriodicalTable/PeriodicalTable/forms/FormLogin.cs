@@ -19,6 +19,13 @@ namespace PeriodicalTable
         {
             this.db = db;
             InitializeComponent();
+            Setup();
+        }
+
+        private void Setup()
+        {
+            this.idNumber.Text = "";
+            this.password.Text = "";
             this.contBtn.Visible = false;
             this.welcomeLbl.Text = "";
             this.pictureBox1.ImageLocation = "";
@@ -49,8 +56,7 @@ namespace PeriodicalTable
         }
         void frMenu_Disposed(object sender, EventArgs e)
         {
-            this.idNumber.Text = "";
-            this.password.Text = "";
+            Setup();
             this.Show();
             this.Activate();
         }

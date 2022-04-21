@@ -8,26 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PeriodicalTable.backend;
 
 namespace PeriodicalTable
 {
     public partial class FormRptElementsByAtomicWeight : Form
     {
-        private OleDbConnection dataConnection;
+        private DBManager db;
 
         private Color lvColor = System.Drawing.ColorTranslator.FromHtml("#000000");
-        public FormRptElementsByAtomicWeight(OleDbConnection dataConnection)
+        public FormRptElementsByAtomicWeight(DBManager db)
         {
-            this.dataConnection = dataConnection;
+            this.db = db;
             InitializeComponent();
             this.Shown += Setup;
         }
         private void Setup(Object sender, EventArgs e)
         {
-            FillFromDB(this.fromAtomic, "");
+            FillFromDB(this.fromAtomic, "ORDER BY elemAtomicWeight");
 
             listView.Columns.Clear();
-            //string strCols = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
             string strCols = "ממשקל,עד משקל,מספר זהות,שורה,טור,סימן,קבוצה,שם מלא,שם אנגלי,שם עברי,משקל אטומי,רמות אנרגיה";
             string[] cols = strCols.Split(',');
             foreach (string col in cols)
@@ -47,7 +47,7 @@ namespace PeriodicalTable
             this.toAtomic.Enabled = true;
             this.addBtn.Enabled = true;
             String from = this.fromAtomic.Text;
-            String cmd = " WHERE elemAtomicWeight >= " + from;
+            String cmd = " WHERE elemAtomicWeight >= " + from + "\n ORDER BY elemAtomicWeight";
             FillFromDB(this.toAtomic, cmd);
         }
 
@@ -55,60 +55,36 @@ namespace PeriodicalTable
         {
             String from = this.fromAtomic.Text;
             String to = this.toAtomic.Text;
-            String cmd = " WHERE elemAtomicWeight >= " + from + " AND elemAtomicWeight <= " + to;
+            String cmd = " WHERE elemAtomicWeight >= " + from + " AND elemAtomicWeight <= " + to + "\n ORDER BY elemAtomicWeight";
             AddFromDB(this.listView, cmd);
         }
 
         private void FillFromDB(ComboBox cb, String cmd)
         {
             cb.Items.Clear();
-            OleDbCommand cbCommand = new OleDbCommand();
-            cbCommand.Connection = dataConnection;
-            String elemSelects = "elemAtomicWeight";
-            cbCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemAtomicWeight";
-            OleDbDataReader cbReader = cbCommand.ExecuteReader();
-            while (cbReader.Read())
+            List<String> data = db.ListForCombo("tblElements", "elemAtomicWeight", cmd:cmd);
+            if (data == null) return;
+            foreach (String val in data)
             {
-                object[] elemObj = new object[elemSelects.Split(',').Length];
-                int len = cbReader.GetValues(elemObj);
-                double atomicWeight = Convert.ToDouble(elemObj[0]);
+                double atomicWeight = Convert.ToDouble(val);
                 cb.Items.Add(atomicWeight);
             }
-            cbReader.Close();
 
-            cb.SelectedText = cb.Items[0].ToString();
+            cb.Text = cb.Items[0].ToString();
 
         }
         private void AddFromDB(ListView lv, String cmd)
         {
-            OleDbCommand lvCommand = new OleDbCommand();
-            lvCommand.Connection = dataConnection;
             String elemSelects = "elemID,elemRow,elemColumn,elemSymbol,elemGroup,elemFullName,elemEnName,elemHeName,elemAtomicWeight,elemEnergyLevels";
-            lvCommand.CommandText = "SELECT " + elemSelects + " FROM tblElements \n " + cmd + "\n ORDER BY elemAtomicWeight";
-            OleDbDataReader lvReader = lvCommand.ExecuteReader();
-            bool first = true;
-            while (lvReader.Read())
+            String[] addCols = { this.fromAtomic.Text, this.toAtomic.Text };
+            Object[][] data = db.GetReport("tblElements", elemSelects, cmd, addCols);
+            if (data == null) return;
+            foreach (String[] row in data)
             {
-                object[] elemObj = new object[elemSelects.Split(',').Length];
-                int len = lvReader.GetValues(elemObj);
-                String[] elemStrArr = Array.ConvertAll(elemObj, x => x.ToString());
-                String[] itemArr;
-                if (first)
-                {
-                    String[] twoCols = { this.fromAtomic.Text, this.toAtomic.Text };
-                    itemArr = twoCols.Concat(elemStrArr).ToArray();
-                    first = false;
-                }
-                else
-                {
-                    String[] twoCols = { "", "" };
-                    itemArr = twoCols.Concat(elemStrArr).ToArray();
-                }
-                ListViewItem item = new ListViewItem(itemArr);
+                ListViewItem item = new ListViewItem(row);
                 item.ForeColor = lvColor;
                 lv.Items.Add(item);
             }
-            lvReader.Close();
         }
 
         private void clearBtnClick(object sender, EventArgs e)
